@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-10T00:00:00.000Z",
+    "traceId": "trace_fixture_strategy_score_oor"
+  },
+  "strategyId": "strategy_fixture_score_oor",
+  "strategyVersion": "1",
+  "subject": {
+    "accountId": "acct_example_x"
+  },
+  "platform": "x",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
+  "sourceWindow": {
+    "from": "2026-07-11T00:00:00.000Z",
+    "to": "2026-08-10T00:00:00.000Z",
+    "strategyWindowDays": 30,
+    "matureCheckpointMinutes": 1440
+  },
+  "sampleSize": 3,
+  "overallScore": 140,
+  "confidence": 0.5,
+  "exploreRate": 0.1,
+  "preferred": [],
+  "avoid": [],
+  "inputsDigest": "sha256:fixture-score-oor",
+  "status": "active"
+}

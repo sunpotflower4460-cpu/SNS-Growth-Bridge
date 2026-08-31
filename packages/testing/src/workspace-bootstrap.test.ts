@@ -8,7 +8,7 @@ import { describe, expect, it } from 'vitest';
 import { PACKAGE_NAME, PACKAGE_PHASE, WORKSPACE_PACKAGE_NAMES } from './index.js';
 
 describe('workspace bootstrap', () => {
-  it('resolves every Phase 1 package entry point', () => {
+  it('resolves every workspace package entry point', () => {
     expect(contractsName).toBe('@sns-growth-bridge/contracts');
     expect(scoringName).toBe('@sns-growth-bridge/scoring');
     expect(strategyName).toBe('@sns-growth-bridge/strategy');
@@ -17,8 +17,8 @@ describe('workspace bootstrap', () => {
     expect(PACKAGE_NAME).toBe('@sns-growth-bridge/testing');
   });
 
-  it('keeps every package on Phase 1 (no domain logic shipped)', () => {
-    expect(contractsPhase).toBe(1);
+  it('keeps scoring, strategy, adapters, and testing on Phase 1; contracts is Phase 2', () => {
+    expect(contractsPhase).toBe(2);
     expect(scoringPhase).toBe(1);
     expect(strategyPhase).toBe(1);
     expect(adaptersMySnsPhase).toBe(1);

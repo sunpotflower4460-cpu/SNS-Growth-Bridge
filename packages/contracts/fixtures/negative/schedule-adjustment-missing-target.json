@@ -1,0 +1,6 @@
+{
+  "adjustmentId": "adj_missing_target",
+  "action": "delay",
+  "reason": "A schedule adjustment must name the target schedule.",
+  "confidence": 0.5
+}

@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-ai",
+    "producedAt": "2026-08-01T12:00:00.000Z",
+    "traceId": "trace_fixture_unsupported_platform"
+  },
+  "snapshotId": "snap_fixture_bad_platform",
+  "postId": "post_fixture_1",
+  "subject": {
+    "accountId": "acct_example_x"
+  },
+  "platform": "linkedin",
+  "externalPostId": "ext_post_1",
+  "capturedAt": "2026-08-01T12:00:00.000Z",
+  "checkpointMinutes": 60,
+  "metrics": {
+    "impressions": 10
+  }
+}

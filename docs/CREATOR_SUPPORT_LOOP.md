@@ -1,6 +1,6 @@
 # Creator Support Loop — Asset Requests and Anchor / Orbit
 
-Status: **Phase 2 design input. Not implemented.**
+Status: **Phase 2 contracts implemented.** Runtime generation, Creator Task UI, asset-shortage detection, Anchor detection, Orbit publishing, and adapters are **not** implemented.
 
 This document extends SNS-Growth-Bridge from "better post advice" into a shared contract layer that can also express:
 

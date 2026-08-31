@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "my-sns",
+    "producedAt": "2026-08-01T12:00:00.000Z",
+    "traceId": "trace_fixture_correction_empty_changed"
+  },
+  "eventId": "hce_empty_changed",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "draftId": "draft_fixture_1",
+  "revisionId": "rev_fixture_2",
+  "occurredAt": "2026-08-01T11:55:00.000Z",
+  "before": {
+    "title": "Draft",
+    "body": "Original AI body",
+    "hashtags": ["music"],
+    "cta": "Listen"
+  },
+  "after": {
+    "title": "Edited title",
+    "body": "Human edited body",
+    "hashtags": ["music"],
+    "cta": "Listen"
+  },
+  "changedFields": []
+}

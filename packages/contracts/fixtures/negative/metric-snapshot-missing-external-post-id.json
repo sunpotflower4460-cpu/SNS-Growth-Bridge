@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-ai",
+    "producedAt": "2026-08-01T12:00:00.000Z",
+    "traceId": "trace_fixture_metric_missing_external"
+  },
+  "snapshotId": "snap_missing_external",
+  "postId": "post_fixture_1",
+  "subject": {
+    "accountId": "acct_example_x"
+  },
+  "platform": "x",
+  "capturedAt": "2026-08-01T12:00:00.000Z",
+  "checkpointMinutes": 60,
+  "metrics": {
+    "impressions": 10
+  }
+}

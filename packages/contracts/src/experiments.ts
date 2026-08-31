@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { envelopeMetaSchema } from './envelope.js';
 import { growthSubjectRefSchema } from './identity.js';
 import { growthFeatureDimensionSchema, platformSchema } from './platform.js';
-import { confidence, isoDateTime, nonEmptyString } from './primitives.js';
+import { confidence, isoDateTime, nonEmptyString, score100 } from './primitives.js';
 
 export const experimentAssignmentSchema = z.object({
   experimentId: nonEmptyString,
@@ -31,8 +31,8 @@ export const experimentResultSchema = z.object({
   meta: envelopeMetaSchema,
   experimentId: nonEmptyString,
   completedAt: isoDateTime,
-  controlScore: z.number().optional(),
-  variantScore: z.number().optional(),
+  controlScore: score100.optional(),
+  variantScore: score100.optional(),
   confidence,
   outcome: z.enum(['control', 'variant', 'inconclusive']),
   notes: z.array(z.string()),

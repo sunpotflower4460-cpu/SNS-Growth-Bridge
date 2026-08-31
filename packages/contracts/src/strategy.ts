@@ -3,13 +3,21 @@ import { z } from 'zod';
 import { envelopeMetaSchema } from './envelope.js';
 import { growthSubjectRefSchema } from './identity.js';
 import { growthFeatureDimensionSchema, platformSchema } from './platform.js';
-import { confidence, isoDateTime, nonEmptyString, nonNegativeInt, positiveInt } from './primitives.js';
+import {
+  confidence,
+  isoDateTime,
+  isIsoDateTimeRangeOrdered,
+  nonEmptyString,
+  nonNegativeInt,
+  positiveInt,
+  score100,
+} from './primitives.js';
 
 export const strategyPatternSchema = z.object({
   dimension: growthFeatureDimensionSchema,
   value: nonEmptyString,
   sampleSize: nonNegativeInt,
-  averageScore: z.number(),
+  averageScore: score100,
   lift: z.number(),
   confidence,
   rationale: nonEmptyString,
@@ -26,14 +34,24 @@ export const growthStrategySnapshotSchema = z
     subject: growthSubjectRefSchema,
     platform: platformSchema,
     generatedAt: isoDateTime,
-    sourceWindow: z.object({
-      from: isoDateTime,
-      to: isoDateTime,
-      strategyWindowDays: positiveInt,
-      matureCheckpointMinutes: positiveInt,
-    }),
+    sourceWindow: z
+      .object({
+        from: isoDateTime,
+        to: isoDateTime,
+        strategyWindowDays: positiveInt,
+        matureCheckpointMinutes: positiveInt,
+      })
+      .superRefine((value, ctx) => {
+        if (!isIsoDateTimeRangeOrdered(value.from, value.to)) {
+          ctx.addIssue({
+            code: 'custom',
+            message: 'sourceWindow.from must be <= sourceWindow.to',
+            path: ['from'],
+          });
+        }
+      }),
     sampleSize: nonNegativeInt,
-    overallScore: z.number(),
+    overallScore: score100,
     confidence,
     exploreRate: z.number().min(0).max(1),
     preferred: z.array(strategyPatternSchema),

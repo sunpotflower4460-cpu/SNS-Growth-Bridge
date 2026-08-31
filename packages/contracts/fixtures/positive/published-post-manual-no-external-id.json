@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "my-sns",
+    "producedAt": "2026-08-20T18:01:00.000Z",
+    "traceId": "trace_fixture_manual_published_post"
+  },
+  "postId": "post_retrip_manual_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "revisionId": "rev_manual_1",
+  "publishedAt": "2026-08-20T18:00:00.000Z",
+  "text": "久しぶりに Re:trip を二人で歌いました",
+  "media": [
+    {
+      "type": "video",
+      "role": "source"
+    }
+  ],
+  "features": {
+    "topic": "Re:trip",
+    "format": "manual-live-clip"
+  }
+}

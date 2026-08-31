@@ -240,7 +240,7 @@ interface PublishedPostSnapshot {
   platform: Platform
   revisionId?: string
   seedId?: string
-  externalPostId: string
+  externalPostId?: string
   externalUrl?: string
   publishedAt: string
   text?: string
@@ -254,6 +254,8 @@ interface PublishedMediaSnapshot {
   role?: 'source' | 'variant' | 'thumbnail' | 'cover' | 'eyecatch'
 }
 ```
+
+`externalPostId` is optional. My-SNS manual / zero-cost publishes can be canonical `PublishedPostSnapshot`s before a provider id exists. `MetricSnapshot.externalPostId` remains required.
 
 Do not place signed storage URLs or provider access credentials in this payload.
 
@@ -305,6 +307,7 @@ Rules:
 - `NaN` and `Infinity` are rejected
 - `reelSkipRate` must be between 0 and 1 inclusive
 - negative metrics are invalid
+- `MetricSnapshot.externalPostId` is required even when the related `PublishedPostSnapshot` has no provider id yet; do not emit a metric checkpoint until a provider post id exists
 - a checkpoint without a resolvable published post must not be used for strategy learning
 
 ### `likes` is raw preservation only
@@ -371,7 +374,7 @@ interface StrategyPattern {
   dimension: GrowthFeatureDimension
   value: string
   sampleSize: number
-  averageScore: number
+  averageScore: number // 0..100
   lift: number
   confidence: number
   rationale: string
@@ -392,7 +395,7 @@ interface GrowthStrategySnapshot {
     matureCheckpointMinutes: number
   }
   sampleSize: number
-  overallScore: number
+  overallScore: number // 0..100
   confidence: number
   exploreRate: number
   preferred: StrategyPattern[]
@@ -416,6 +419,8 @@ If there is insufficient mature evidence:
 ```
 
 Do not fabricate neutral-looking patterns. The validator rejects `insufficient-evidence` payloads that violate those zeros/empties.
+
+`sourceWindow.from` must be `<= sourceWindow.to`. `overallScore` and pattern `averageScore` are 0..100.
 
 ---
 
@@ -501,8 +506,8 @@ interface ExperimentResult {
   meta: EnvelopeMeta
   experimentId: string
   completedAt: string
-  controlScore?: number
-  variantScore?: number
+  controlScore?: number // 0..100
+  variantScore?: number // 0..100
   confidence: number
   outcome: 'control' | 'variant' | 'inconclusive'
   notes: string[]
@@ -566,6 +571,8 @@ Validation:
 - negative `evidenceCount` rejected
 - `confidence` in `0..1`
 - `confidence >= 0.8` with `evidenceCount === 0` rejected (do not fake high confidence)
+- `evidenceWindow.from` must be `<= evidenceWindow.to` when present
+- `expiresAt` must be `>= generatedAt` when present
 - `requestedAction.kind` must equal `type`
 - `quantity <= 0` rejected
 - duration min/max must be `>= 0`; `min > max` rejected
@@ -612,6 +619,11 @@ interface AnchorEntity {
 
 `external-confirmed` is reserved for a future adapter that **actually confirmed** an external post. Guessing “the creator probably posted this” is not an Anchor. Phase 2 does not detect anchors.
 
+Validation:
+
+- at least one of `publishedPostId` or `externalPostId` is required
+- `source === 'external-confirmed'` additionally requires `externalPostId`
+
 ### OrbitPlan and OrbitItem
 
 AI support around a Human Anchor. Phase 2 does not generate or publish Orbit items.
@@ -657,14 +669,14 @@ Advice only. Bridge does **not** change My-SNS or SNS-AI schedules. Those remain
 interface ScheduleAdjustmentRecommendation {
   adjustmentId: string
   action: 'keep' | 'delay' | 'cancel' | 'replace'
-  targetScheduleId?: string
+  targetScheduleId: string
   reason: string
   replacementConcept?: string
   confidence: number
 }
 ```
 
-Unknown `action` values fail closed.
+Unknown `action` values fail closed. `targetScheduleId` is required. `action === 'replace'` also requires non-empty `replacementConcept`.
 
 ### Automation levels (future note only)
 

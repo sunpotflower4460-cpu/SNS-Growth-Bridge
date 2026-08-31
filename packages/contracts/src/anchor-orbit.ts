@@ -16,20 +16,37 @@ export const anchorEntitySchema = z.object({
 
 export type AnchorEntity = z.infer<typeof anchorEntitySchema>;
 
-export const humanAnchorEventSchema = z.object({
-  meta: envelopeMetaSchema,
-  anchorId: nonEmptyString,
-  subject: growthSubjectRefSchema,
-  platform: platformSchema,
-  source: humanAnchorSourceSchema,
-  publishedPostId: nonEmptyString.optional(),
-  externalPostId: nonEmptyString.optional(),
-  occurredAt: isoDateTime,
-  theme: nonEmptyString.optional(),
-  entities: z.array(anchorEntitySchema).optional(),
-  summary: z.string().optional(),
-  confidence,
-});
+export const humanAnchorEventSchema = z
+  .object({
+    meta: envelopeMetaSchema,
+    anchorId: nonEmptyString,
+    subject: growthSubjectRefSchema,
+    platform: platformSchema,
+    source: humanAnchorSourceSchema,
+    publishedPostId: nonEmptyString.optional(),
+    externalPostId: nonEmptyString.optional(),
+    occurredAt: isoDateTime,
+    theme: nonEmptyString.optional(),
+    entities: z.array(anchorEntitySchema).optional(),
+    summary: z.string().optional(),
+    confidence,
+  })
+  .superRefine((value, ctx) => {
+    if (!value.publishedPostId && !value.externalPostId) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'HumanAnchorEvent requires at least one of publishedPostId or externalPostId',
+        path: ['publishedPostId'],
+      });
+    }
+    if (value.source === 'external-confirmed' && !value.externalPostId) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'external-confirmed HumanAnchorEvent requires externalPostId',
+        path: ['externalPostId'],
+      });
+    }
+  });
 
 export type HumanAnchorEvent = z.infer<typeof humanAnchorEventSchema>;
 
@@ -60,14 +77,24 @@ export const scheduleAdjustmentActionSchema = z.enum(['keep', 'delay', 'cancel',
 
 export type ScheduleAdjustmentAction = z.infer<typeof scheduleAdjustmentActionSchema>;
 
-export const scheduleAdjustmentRecommendationSchema = z.object({
-  adjustmentId: nonEmptyString,
-  action: scheduleAdjustmentActionSchema,
-  targetScheduleId: nonEmptyString.optional(),
-  reason: nonEmptyString,
-  replacementConcept: z.string().optional(),
-  confidence,
-});
+export const scheduleAdjustmentRecommendationSchema = z
+  .object({
+    adjustmentId: nonEmptyString,
+    action: scheduleAdjustmentActionSchema,
+    targetScheduleId: nonEmptyString,
+    reason: nonEmptyString,
+    replacementConcept: nonEmptyString.optional(),
+    confidence,
+  })
+  .superRefine((value, ctx) => {
+    if (value.action === 'replace' && !value.replacementConcept) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'replace ScheduleAdjustmentRecommendation requires replacementConcept',
+        path: ['replacementConcept'],
+      });
+    }
+  });
 
 export type ScheduleAdjustmentRecommendation = z.infer<typeof scheduleAdjustmentRecommendationSchema>;
 

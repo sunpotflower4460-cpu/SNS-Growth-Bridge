@@ -3,7 +3,15 @@ import { z } from 'zod';
 import { envelopeMetaSchema } from './envelope.js';
 import { growthSubjectRefSchema } from './identity.js';
 import { platformSchema } from './platform.js';
-import { confidence, isoDateTime, nonEmptyString, nonNegativeFinite, nonNegativeInt, positiveInt } from './primitives.js';
+import {
+  confidence,
+  isoDateTime,
+  nonEmptyString,
+  nonNegativeFinite,
+  nonNegativeInt,
+  positiveInt,
+  score100,
+} from './primitives.js';
 
 const countMetric = nonNegativeFinite;
 
@@ -65,7 +73,7 @@ export type NormalizedMetricVector = z.infer<typeof normalizedMetricVectorSchema
 
 export const performanceScoreSchema = z.object({
   postId: nonEmptyString,
-  score: z.number().min(0).max(100),
+  score: score100,
   confidence,
   baselineCount: nonNegativeInt,
   vector: normalizedMetricVectorSchema,

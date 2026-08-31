@@ -11,6 +11,7 @@
   },
   "platform": "x",
   "source": "guessed",
+  "publishedPostId": "post_guessed_1",
   "occurredAt": "2026-08-20T18:00:00.000Z",
   "summary": "Guessing that the creator probably posted this is not an anchor.",
   "confidence": 0.4

@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:05:00.000Z",
+    "traceId": "trace_fixture_anchor_external_confirmed_no_ext"
+  },
+  "anchorId": "anchor_guessed_external",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "source": "external-confirmed",
+  "publishedPostId": "post_internal_only_1",
+  "occurredAt": "2026-08-20T18:00:00.000Z",
+  "summary": "external-confirmed requires a verified provider post id, not a guess.",
+  "confidence": 0.4
+}

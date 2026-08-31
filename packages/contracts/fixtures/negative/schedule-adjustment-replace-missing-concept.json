@@ -1,0 +1,7 @@
+{
+  "adjustmentId": "adj_replace_missing_concept",
+  "action": "replace",
+  "targetScheduleId": "sched_retrip_promo_1",
+  "reason": "Replace requires a replacement concept so the schedule is not left empty.",
+  "confidence": 0.7
+}

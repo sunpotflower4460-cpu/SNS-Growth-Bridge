@@ -14,7 +14,12 @@ export const publishedPostSnapshotSchema = z.object({
   platform: platformSchema,
   revisionId: nonEmptyString.optional(),
   seedId: nonEmptyString.optional(),
-  externalPostId: nonEmptyString,
+  /**
+   * Provider-native post id. Optional so My-SNS manual / zero-cost publishes
+   * can be canonical PublishedPosts before a provider id exists.
+   * MetricSnapshot.externalPostId remains required.
+   */
+  externalPostId: nonEmptyString.optional(),
   externalUrl: nonEmptyString.optional(),
   publishedAt: isoDateTime,
   text: z.string().optional(),

@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:05:00.000Z",
+    "traceId": "trace_fixture_anchor_missing_ids"
+  },
+  "anchorId": "anchor_missing_ids",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "source": "my-sns-manual",
+  "occurredAt": "2026-08-20T18:00:00.000Z",
+  "summary": "An anchor without a published or external post id is not confirmable.",
+  "confidence": 0.9
+}

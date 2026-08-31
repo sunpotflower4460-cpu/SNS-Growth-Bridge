@@ -11,6 +11,7 @@ import {
   parseHumanCorrectionEvent,
   parseMetricSnapshot,
   parseOrbitPlan,
+  parsePublishedPostSnapshot,
   parseRawMetricVector,
   parseScheduleAdjustmentRecommendation,
 } from './index.js';
@@ -101,7 +102,18 @@ describe('positive contract fixtures', () => {
     );
     expect(parsed.action).toBe('replace');
     expect(parsed.targetScheduleId).toBe('sched_retrip_promo_1');
+    expect(parsed.replacementConcept).toBeTruthy();
     expect(parsed.reason).toMatch(/duplicate/i);
+  });
+
+  it('accepts a My-SNS manual PublishedPostSnapshot without externalPostId', () => {
+    const parsed = parsePublishedPostSnapshot(
+      loadJsonFixture('positive', 'published-post-manual-no-external-id.json'),
+    );
+    expect(parsed.postId).toBe('post_retrip_manual_1');
+    expect(parsed.externalPostId).toBeUndefined();
+    expect(parsed.subject.workspaceId).toBe('ws_fixture_1');
+    expect(parsed.meta.producer).toBe('my-sns');
   });
 
   it('accepts an insufficient-evidence GrowthStrategySnapshot', () => {
@@ -221,6 +233,22 @@ describe('negative contract fixtures', () => {
     );
   });
 
+  it('rejects HumanAnchorEvent with neither publishedPostId nor externalPostId', () => {
+    const error = expectContractError(() =>
+      parseHumanAnchorEvent(loadJsonFixture('negative', 'human-anchor-missing-post-ids.json')),
+    );
+    expect(error.message).toMatch(/publishedPostId or externalPostId/i);
+  });
+
+  it('rejects external-confirmed HumanAnchorEvent without externalPostId', () => {
+    const error = expectContractError(() =>
+      parseHumanAnchorEvent(
+        loadJsonFixture('negative', 'human-anchor-external-confirmed-missing-external-id.json'),
+      ),
+    );
+    expect(error.message).toMatch(/externalPostId/i);
+  });
+
   it('rejects OrbitPlan with empty anchorId', () => {
     expectContractError(() => parseOrbitPlan(loadJsonFixture('negative', 'orbit-plan-empty-anchor-id.json')));
   });
@@ -228,6 +256,54 @@ describe('negative contract fixtures', () => {
   it('rejects an unknown ScheduleAdjustment action', () => {
     expectContractError(() =>
       parseScheduleAdjustmentRecommendation(loadJsonFixture('negative', 'schedule-adjustment-unknown-action.json')),
+    );
+  });
+
+  it('rejects ScheduleAdjustmentRecommendation without targetScheduleId', () => {
+    expectContractError(() =>
+      parseScheduleAdjustmentRecommendation(loadJsonFixture('negative', 'schedule-adjustment-missing-target.json')),
+    );
+  });
+
+  it('rejects replace ScheduleAdjustmentRecommendation without replacementConcept', () => {
+    const error = expectContractError(() =>
+      parseScheduleAdjustmentRecommendation(
+        loadJsonFixture('negative', 'schedule-adjustment-replace-missing-concept.json'),
+      ),
+    );
+    expect(error.message).toMatch(/replacementConcept/i);
+  });
+
+  it('rejects MetricSnapshot without required externalPostId', () => {
+    expectContractError(() =>
+      parseMetricSnapshot(loadJsonFixture('negative', 'metric-snapshot-missing-external-post-id.json')),
+    );
+  });
+
+  it('rejects inverted evidenceWindow', () => {
+    const error = expectContractError(() =>
+      parseCreatorActionRecommendation(loadJsonFixture('negative', 'evidence-window-from-after-to.json')),
+    );
+    expect(error.message).toMatch(/evidenceWindow\.from/i);
+  });
+
+  it('rejects expiresAt before generatedAt', () => {
+    const error = expectContractError(() =>
+      parseCreatorActionRecommendation(loadJsonFixture('negative', 'expires-at-before-generated-at.json')),
+    );
+    expect(error.message).toMatch(/expiresAt/i);
+  });
+
+  it('rejects inverted GrowthStrategy sourceWindow', () => {
+    const error = expectContractError(() =>
+      parseGrowthStrategySnapshot(loadJsonFixture('negative', 'growth-strategy-source-window-inverted.json')),
+    );
+    expect(error.message).toMatch(/sourceWindow\.from/i);
+  });
+
+  it('rejects overallScore outside 0..100', () => {
+    expectContractError(() =>
+      parseGrowthStrategySnapshot(loadJsonFixture('negative', 'growth-strategy-score-out-of-range.json')),
     );
   });
 });

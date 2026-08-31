@@ -5,6 +5,7 @@ import { growthSubjectRefSchema } from './identity.js';
 import {
   confidence,
   isoDateTime,
+  isIsoDateTimeRangeOrdered,
   nonEmptyString,
   nonNegativeFinite,
   nonNegativeInt,
@@ -104,6 +105,15 @@ export const recommendationRationaleSchema = z.object({
       from: isoDateTime,
       to: isoDateTime,
     })
+    .superRefine((value, ctx) => {
+      if (!isIsoDateTimeRangeOrdered(value.from, value.to)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'evidenceWindow.from must be <= evidenceWindow.to',
+          path: ['from'],
+        });
+      }
+    })
     .optional(),
   observations: z.array(z.string()),
   missingEvidence: z.array(z.string()).optional(),
@@ -140,6 +150,13 @@ export const creatorActionRecommendationSchema = z
         code: 'custom',
         message: 'high confidence is not allowed when evidenceCount is 0',
         path: ['confidence'],
+      });
+    }
+    if (value.expiresAt !== undefined && !isIsoDateTimeRangeOrdered(value.generatedAt, value.expiresAt)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'expiresAt must be >= generatedAt',
+        path: ['expiresAt'],
       });
     }
   });

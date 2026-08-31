@@ -1,0 +1,6 @@
+{
+  "adjustmentId": "adj_unknown_action",
+  "action": "reschedule",
+  "reason": "Unknown actions must fail closed.",
+  "confidence": 0.5
+}

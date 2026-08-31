@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:10:00.000Z",
+    "traceId": "trace_fixture_empty_anchor_id"
+  },
+  "orbitPlanId": "orbit_empty_anchor",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "anchorId": "",
+  "generatedAt": "2026-08-20T18:10:00.000Z",
+  "objective": "amplify_human_anchor_without_impersonation",
+  "confidence": 0.5,
+  "orbitItems": [
+    {
+      "orbitItemId": "orbit_item_1",
+      "type": "supporting_post",
+      "timing": "later",
+      "concept": "Supporting context around a missing anchor.",
+      "requiresApproval": true
+    }
+  ]
+}

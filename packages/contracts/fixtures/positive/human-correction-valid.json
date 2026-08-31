@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "my-sns",
+    "producedAt": "2026-08-01T12:00:00.000Z",
+    "traceId": "trace_fixture_human_correction_valid"
+  },
+  "eventId": "hce_fixture_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "seedId": "seed_fixture_1",
+  "draftId": "draft_fixture_1",
+  "revisionId": "rev_fixture_2",
+  "aiGenerationId": "gen_fixture_1",
+  "occurredAt": "2026-08-01T11:55:00.000Z",
+  "before": {
+    "title": "New track tonight",
+    "body": "Check out Aquarium tonight.",
+    "hashtags": ["music", "live"],
+    "cta": "Listen now"
+  },
+  "after": {
+    "title": "Aquarium — live clip",
+    "body": "I just recorded Aquarium. Here is a short chorus clip.",
+    "hashtags": ["music", "live", "aquarium"],
+    "cta": "Watch the clip"
+  },
+  "changedFields": ["title", "body", "hashtags", "cta"]
+}

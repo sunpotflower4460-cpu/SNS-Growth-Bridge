@@ -1,0 +1,8 @@
+{
+  "adjustmentId": "adj_retrip_promo_replace_1",
+  "action": "replace",
+  "targetScheduleId": "sched_retrip_promo_1",
+  "reason": "Creator already manually posted a Re:trip performance; the scheduled direct Re:trip promotional post would duplicate that human anchor.",
+  "replacementConcept": "Replace the promotional post with supporting orbit context rather than restating the same Re:trip promo.",
+  "confidence": 0.86
+}

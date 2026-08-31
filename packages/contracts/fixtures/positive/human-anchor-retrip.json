@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:05:00.000Z",
+    "traceId": "trace_fixture_retrip_human_anchor"
+  },
+  "anchorId": "anchor_retrip_manual_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1",
+    "accountId": "acct_example_x"
+  },
+  "platform": "x",
+  "source": "my-sns-manual",
+  "publishedPostId": "post_retrip_manual_1",
+  "occurredAt": "2026-08-20T18:00:00.000Z",
+  "theme": "live performance",
+  "entities": [
+    {
+      "type": "song",
+      "value": "Re:trip"
+    }
+  ],
+  "summary": "Creator manually posted a recent Re:trip performance.",
+  "confidence": 1
+}

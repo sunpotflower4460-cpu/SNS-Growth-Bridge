@@ -101,6 +101,7 @@ Goal: implement `packages/contracts` before any integration logic.
 Required exported contracts:
 
 - EnvelopeMeta
+- GrowthSubjectRef
 - Platform
 - CreatorProfileSnapshot
 - HumanCorrectionEvent
@@ -116,6 +117,10 @@ Required exported contracts:
 - ExperimentDefinition
 - ExperimentAssignment
 - ExperimentResult
+- CreatorActionRecommendation
+- HumanAnchorEvent
+- OrbitPlan
+- ScheduleAdjustmentRecommendation
 
 Requirements:
 

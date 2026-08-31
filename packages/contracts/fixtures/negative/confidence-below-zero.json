@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-15T09:00:00.000Z",
+    "traceId": "trace_fixture_confidence_low"
+  },
+  "recommendationId": "car_confidence_low",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "type": "information_request",
+  "objective": "clarify_available_assets",
+  "priority": "low",
+  "confidence": -0.1,
+  "generatedAt": "2026-08-15T09:00:00.000Z",
+  "rationale": {
+    "summary": "Confidence must be at least 0.",
+    "evidenceCount": 1,
+    "observations": ["Out of range."]
+  },
+  "requestedAction": {
+    "kind": "information_request",
+    "questions": ["Which songs have reusable clips?"]
+  },
+  "relatedPostIds": []
+}

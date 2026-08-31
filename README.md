@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 1 tooling bootstrap.** Canonical contracts, scoring, and adapters are not implemented yet.
+**Phase 2 canonical contracts + runtime validation.** `packages/contracts` ships schema major `1` (Zod parsers, `GrowthSubjectRef`, fixtures). Scoring, strategy builders, and adapters remain Phase 1 skeletons.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/) (merged via PR #7). Phase 2 contract-review carry-forwards (identity, `likes`, blocked My-SNS metrics) are recorded in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md) and must not be treated as approved mappings.
+Phase 0 audit is in [`docs/audit/`](./docs/audit/) (merged via PR #7). Implemented identity / `likes` / blocked My-SNS metrics are specified in [`docs/CONTRACTS.md`](./docs/CONTRACTS.md). Historical review notes remain in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md).
 
 ### Develop
 
@@ -65,7 +65,7 @@ npm run check
 
 `npm run check` runs lint, typecheck, test, and build.
 
-Workspace packages are **skeletons** in this phase: they export package identity only. No `creatorId` mapping, no MetricSnapshot adapter, no SNS-AI scorer port, no provider I/O.
+Do not invent `creatorId` from `ownerId` / acting user / SNS-AI `accountId`. Do not port the SNS-AI scorer or adapters in the same change as a later phase.
 
 ---
 
@@ -117,4 +117,4 @@ No production database, UI, social OAuth, direct provider publishing, or automat
 
 ## Next phase
 
-Phase 2 is **canonical contracts + runtime validation**, after the identity review in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md). Do not port scoring or adapters in the same change.
+Phase 3 is **SNS-AI scorer parity** as a pure function, using schema major `1` identity (`GrowthSubjectRef`) and ignoring `likes`. Do not start Phase 3 in a contracts PR. SNS-AI remains manual-only.

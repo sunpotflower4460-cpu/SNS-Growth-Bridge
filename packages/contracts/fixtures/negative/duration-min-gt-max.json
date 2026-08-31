@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-15T09:00:00.000Z",
+    "traceId": "trace_fixture_duration_minmax"
+  },
+  "recommendationId": "car_duration_minmax",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "type": "asset_request",
+  "objective": "increase_profile_to_music_conversion",
+  "priority": "normal",
+  "confidence": 0.5,
+  "generatedAt": "2026-08-15T09:00:00.000Z",
+  "rationale": {
+    "summary": "Duration min must not exceed max.",
+    "evidenceCount": 2,
+    "observations": ["Invalid duration window."]
+  },
+  "requestedAction": {
+    "kind": "asset_request",
+    "songOrSubject": "Aquarium",
+    "mediaType": "video",
+    "durationSeconds": {
+      "min": 30,
+      "max": 20
+    }
+  },
+  "relatedPostIds": []
+}

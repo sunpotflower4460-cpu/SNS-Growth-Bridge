@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:10:00.000Z",
+    "traceId": "trace_fixture_retrip_orbit_plan"
+  },
+  "orbitPlanId": "orbit_retrip_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1",
+    "accountId": "acct_example_x"
+  },
+  "anchorId": "anchor_retrip_manual_1",
+  "generatedAt": "2026-08-20T18:10:00.000Z",
+  "objective": "amplify_human_anchor_without_impersonation",
+  "confidence": 0.74,
+  "orbitItems": [
+    {
+      "orbitItemId": "orbit_item_retrip_alt_angle",
+      "type": "alternate_asset",
+      "platform": "x",
+      "timing": "within_24h",
+      "concept": "Share a past Re:trip performance filmed from a different angle, as support around the creator's new live post.",
+      "rationale": "Alternate footage can extend the same song without inventing a new first-person performance.",
+      "requiresApproval": true
+    },
+    {
+      "orbitItemId": "orbit_item_retrip_travel_worldview",
+      "type": "story_context",
+      "platform": "instagram",
+      "timing": "within_72h",
+      "concept": "A travel-worldview post that sits around the Re:trip theme without speaking as the creator's inner voice.",
+      "rationale": "Re:trip already carries a journey motif; supporting atmosphere posts should not claim unstated feelings.",
+      "requiresApproval": true
+    },
+    {
+      "orbitItemId": "orbit_item_retrip_lyric_entry",
+      "type": "lyric_context",
+      "platform": "x",
+      "timing": "same_day",
+      "concept": "Use a published lyric fragment as an entry point that points back to the creator's Re:trip performance.",
+      "requiresApproval": true
+    },
+    {
+      "orbitItemId": "orbit_item_retrip_bts",
+      "type": "behind_the_scenes",
+      "timing": "later",
+      "concept": "A making-of context post about how Re:trip was produced, clearly as supporting context rather than a substitute for the live performance.",
+      "requiresApproval": true
+    }
+  ],
+  "scheduleAdjustments": [
+    {
+      "adjustmentId": "adj_retrip_promo_replace_1",
+      "action": "replace",
+      "targetScheduleId": "sched_retrip_promo_1",
+      "reason": "A scheduled direct Re:trip promotional post would duplicate the creator's already published manual performance.",
+      "replacementConcept": "Replace the direct promo with a lyric or travel-worldview supporting post that does not restage the same performance claim.",
+      "confidence": 0.86
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Phase 2 Contract Review — carry-forward notes
 
-Status: **not implemented**. Recorded during Phase 1 tooling bootstrap so Phase 2 revises contracts against the Phase 0 audit instead of coding the current `docs/CONTRACTS.md` as-is.
+Status: **implemented in Phase 2** (`packages/contracts`, schema major `1`). This file remains the review rationale. The canonical spec is [`docs/CONTRACTS.md`](./CONTRACTS.md).
 
 Sources:
 

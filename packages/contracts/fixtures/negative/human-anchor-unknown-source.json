@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-20T18:05:00.000Z",
+    "traceId": "trace_fixture_unknown_anchor_source"
+  },
+  "anchorId": "anchor_guessed_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1"
+  },
+  "platform": "x",
+  "source": "guessed",
+  "occurredAt": "2026-08-20T18:00:00.000Z",
+  "summary": "Guessing that the creator probably posted this is not an anchor.",
+  "confidence": 0.4
+}

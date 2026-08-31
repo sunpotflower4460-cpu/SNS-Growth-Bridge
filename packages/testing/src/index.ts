@@ -1,8 +1,9 @@
 /**
  * Workspace testing-harness identity.
  *
- * Phase 1 only proves that packages resolve and build.
- * Contract fixtures and full-loop scenarios belong in later phases.
+ * Phase 1 proved that packages resolve and build.
+ * Contract fixtures live in `@sns-growth-bridge/contracts` (Phase 2).
+ * Full-loop scoring/strategy scenarios belong in later phases.
  */
 export const PACKAGE_NAME = '@sns-growth-bridge/testing' as const;
 

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-08-15T09:00:00.000Z",
+    "traceId": "trace_fixture_aquarium_asset_request"
+  },
+  "recommendationId": "car_aquarium_vertical_chorus_1",
+  "subject": {
+    "workspaceId": "ws_fixture_1",
+    "accountId": "acct_example_x"
+  },
+  "type": "asset_request",
+  "objective": "increase_profile_to_music_conversion",
+  "priority": "high",
+  "confidence": 0.78,
+  "generatedAt": "2026-08-15T09:00:00.000Z",
+  "rationale": {
+    "summary": "Close and medium acoustic-performance posts show high profile-transition performance, while Aquarium lacks matching reusable assets.",
+    "evidenceCount": 11,
+    "evidenceWindow": {
+      "from": "2026-07-16T00:00:00.000Z",
+      "to": "2026-08-15T00:00:00.000Z"
+    },
+    "observations": [
+      "Acoustic performance posts outperformed the recent account baseline.",
+      "Close and medium vertical videos had higher profile-transition rates.",
+      "Aquarium audience response is strong when matching clips exist.",
+      "Reusable Aquarium chorus assets in the requested framing are missing."
+    ],
+    "missingEvidence": [
+      "No reusable vertical Aquarium chorus clips in medium or close framing."
+    ]
+  },
+  "requestedAction": {
+    "kind": "asset_request",
+    "songOrSubject": "Aquarium",
+    "mediaType": "video",
+    "orientation": "vertical",
+    "durationSeconds": {
+      "min": 20,
+      "max": 30
+    },
+    "framing": ["medium", "close"],
+    "quantity": 2,
+    "desiredMoments": ["chorus"],
+    "notes": [
+      "Record two 20-30 second vertical Aquarium chorus clips."
+    ]
+  },
+  "relatedPostIds": ["post_acoustic_1", "post_acoustic_2"]
+}

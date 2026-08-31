@@ -16,7 +16,7 @@ import {
 export const strategyPatternSchema = z.object({
   dimension: growthFeatureDimensionSchema,
   value: nonEmptyString,
-  sampleSize: nonNegativeInt,
+  sampleSize: positiveInt,
   averageScore: score100,
   lift: z.number(),
   confidence,
@@ -70,6 +70,13 @@ export const growthStrategySnapshotSchema = z
         });
       }
     }
+    if (value.status === 'active' && value.sampleSize < 1) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'active strategies require sampleSize >= 1',
+        path: ['sampleSize'],
+      });
+    }
   });
 
 export type GrowthStrategySnapshot = z.infer<typeof growthStrategySnapshotSchema>;
@@ -87,16 +94,35 @@ export const humanPreferencePatternSchema = z.object({
 
 export type HumanPreferencePattern = z.infer<typeof humanPreferencePatternSchema>;
 
-export const humanPreferenceSummarySchema = z.object({
-  meta: envelopeMetaSchema,
-  summaryId: nonEmptyString,
-  subject: growthSubjectRefSchema,
-  platform: platformSchema.optional(),
-  generatedAt: isoDateTime,
-  sourceCorrectionCount: nonNegativeInt,
-  explicitFeedbackCount: nonNegativeInt,
-  preferences: z.array(humanPreferencePatternSchema),
-});
+export const humanPreferenceSummarySchema = z
+  .object({
+    meta: envelopeMetaSchema,
+    summaryId: nonEmptyString,
+    subject: growthSubjectRefSchema,
+    platform: platformSchema.optional(),
+    generatedAt: isoDateTime,
+    sourceCorrectionCount: nonNegativeInt,
+    explicitFeedbackCount: nonNegativeInt,
+    preferences: z.array(humanPreferencePatternSchema),
+  })
+  .superRefine((value, ctx) => {
+    const hasExplicit = value.preferences.some((item) => item.source === 'explicit');
+    const hasCorrection = value.preferences.some((item) => item.source === 'correction-inference');
+    if (hasExplicit && value.explicitFeedbackCount < 1) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'explicit preference patterns require explicitFeedbackCount >= 1',
+        path: ['explicitFeedbackCount'],
+      });
+    }
+    if (hasCorrection && value.sourceCorrectionCount < 1) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'correction-inference preference patterns require sourceCorrectionCount >= 1',
+        path: ['sourceCorrectionCount'],
+      });
+    }
+  });
 
 export type HumanPreferenceSummary = z.infer<typeof humanPreferenceSummarySchema>;
 

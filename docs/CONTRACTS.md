@@ -22,7 +22,7 @@ Required on every top-level growth payload.
 interface EnvelopeMeta {
   schemaVersion: number // major; currently must be 1
   producer: 'my-sns' | 'sns-ai' | 'sns-growth-bridge'
-  producedAt: string // ISO 8601 datetime with offset
+  producedAt: string // ISO 8601 datetime with offset, including Z
   traceId: string // non-empty
 }
 ```
@@ -420,7 +420,7 @@ If there is insufficient mature evidence:
 
 Do not fabricate neutral-looking patterns. The validator rejects `insufficient-evidence` payloads that violate those zeros/empties.
 
-`sourceWindow.from` must be `<= sourceWindow.to`. `overallScore` and pattern `averageScore` are 0..100.
+`sourceWindow.from` must be `<= sourceWindow.to`. `overallScore` and pattern `averageScore` are 0..100. `status: 'active'` requires `sampleSize >= 1`. Each preferred/avoid pattern requires `sampleSize >= 1`.
 
 ---
 
@@ -452,7 +452,7 @@ interface CandidateAdvice {
 }
 ```
 
-`softGuidance` never overrides Brand Profile or explicit human rules.
+`softGuidance` never overrides Brand Profile or explicit human rules. Preference patterns with `source: 'explicit'` require `explicitFeedbackCount >= 1`. Patterns with `source: 'correction-inference'` require `sourceCorrectionCount >= 1`.
 
 ---
 
@@ -514,7 +514,7 @@ interface ExperimentResult {
 }
 ```
 
-SNS-AI currently uses `expired` in places. Canonical status is `cancelled`, not a silent rename of live SNS-AI files. Do not automatically turn an inconclusive experiment into a permanent strategy preference.
+SNS-AI currently uses `expired` in places. Canonical status is `cancelled`, not a silent rename of live SNS-AI files. Do not automatically turn an inconclusive experiment into a permanent strategy preference. `control` and `variant` must differ.
 
 ---
 

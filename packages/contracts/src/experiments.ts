@@ -13,17 +13,27 @@ export const experimentAssignmentSchema = z.object({
 
 export type ExperimentAssignment = z.infer<typeof experimentAssignmentSchema>;
 
-export const experimentDefinitionSchema = z.object({
-  meta: envelopeMetaSchema,
-  experimentId: nonEmptyString,
-  subject: growthSubjectRefSchema,
-  platform: platformSchema,
-  dimension: growthFeatureDimensionSchema,
-  control: nonEmptyString,
-  variant: nonEmptyString,
-  startedAt: isoDateTime,
-  status: z.enum(['planned', 'running', 'completed', 'cancelled']),
-});
+export const experimentDefinitionSchema = z
+  .object({
+    meta: envelopeMetaSchema,
+    experimentId: nonEmptyString,
+    subject: growthSubjectRefSchema,
+    platform: platformSchema,
+    dimension: growthFeatureDimensionSchema,
+    control: nonEmptyString,
+    variant: nonEmptyString,
+    startedAt: isoDateTime,
+    status: z.enum(['planned', 'running', 'completed', 'cancelled']),
+  })
+  .superRefine((value, ctx) => {
+    if (value.control === value.variant) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'ExperimentDefinition control and variant must differ',
+        path: ['variant'],
+      });
+    }
+  });
 
 export type ExperimentDefinition = z.infer<typeof experimentDefinitionSchema>;
 

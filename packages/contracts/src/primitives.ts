@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const nonEmptyString = z.string().trim().min(1);
 
-export const isoDateTime = z.iso.datetime();
+export const isoDateTime = z.iso.datetime({ offset: true });
 
 export const confidence = z.number().min(0).max(1);
 

@@ -1,0 +1,57 @@
+---
+description: Guardrails and execution rules for SNS-Growth-Bridge integration work
+alwaysApply: true
+---
+
+# SNS Growth Bridge Cursor Rules
+
+Before editing code, read:
+
+- `AGENTS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/CONTRACTS.md`
+- `docs/IMPLEMENTATION_PLAN.md`
+- `docs/CURSOR_AGENT_IMPLEMENTATION.md`
+
+## Core intent
+
+This repository is a shared growth-intelligence layer between two separate products:
+
+- My-SNS: creator-facing SaaS and publishing source of truth
+- SNS-AI: autonomous/operator growth engine
+
+Do not merge their applications or runtime state.
+
+## Always preserve
+
+- My-SNS owns OAuth, publish jobs, publish attempts, approval revisions, workspace/auth.
+- SNS-AI owns its manual-only/autopilot runtime state and operator workflows.
+- Bridge owns contracts, adapters, scoring, strategy logic, fixtures, compatibility tests.
+- Human-correction evidence and audience-performance evidence are separate signal families.
+- Creator hard constraints outrank performance optimization.
+
+## Never do automatically
+
+- enable SNS-AI accounts
+- restore schedules or cron triggers in SNS-AI
+- publish to a provider
+- send replies/DMs
+- copy provider credentials
+- introduce a third publishing queue
+- create a shared production database during v1
+- delete source-repo learning code before parity tests
+- make cross-repository production changes during Phase 0
+
+## Implementation style
+
+- pure functions before I/O
+- strict TypeScript in Bridge
+- runtime-validated versioned contracts
+- deterministic fixtures
+- fail closed on unsupported schema / ambiguous identity / invalid metrics
+- record source commit SHAs in audit docs
+- keep PRs small and phase-scoped
+
+## Required first task
+
+If `docs/audit/MY_SNS_CURRENT_STATE.md`, `docs/audit/SNS_AI_CURRENT_STATE.md`, and `docs/audit/MAPPING_MATRIX.md` do not exist, perform Phase 0 only. Do not start package implementation in the same change unless the audit contains no unresolved mapping blockers and the human explicitly requested implementation beyond Phase 0.

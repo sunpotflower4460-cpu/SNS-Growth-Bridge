@@ -1,0 +1,24 @@
+{
+  "name": "@sns-growth-bridge/strategy",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure growth-strategy learning. Phase 1 skeleton only — no builder yet.",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json"
+  }
+}

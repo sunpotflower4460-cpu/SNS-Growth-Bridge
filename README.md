@@ -50,26 +50,22 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Design baseline complete. Implementation has not started.**
+**Phase 1 tooling bootstrap.** Canonical contracts, scoring, and adapters are not implemented yet.
 
-The first implementation task is **Phase 0 audit only**:
+Phase 0 audit is in [`docs/audit/`](./docs/audit/) (merged via PR #7). Phase 2 contract-review carry-forwards (identity, `likes`, blocked My-SNS metrics) are recorded in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md) and must not be treated as approved mappings.
 
-- inspect current `main` of `sunpotflower4460-cpu/My-SNS`
-- inspect current `main` of `sunpotflower4460-cpu/SNS-AI`
-- record exact commit SHAs
-- map current implementation into canonical bridge contracts
-- do not change either source repository
-- mark unknown mappings as blockers instead of guessing
+### Develop
 
-Expected Phase 0 outputs:
+Requires Node.js 22+.
 
 ```text
-docs/audit/MY_SNS_CURRENT_STATE.md
-docs/audit/SNS_AI_CURRENT_STATE.md
-docs/audit/MAPPING_MATRIX.md
+npm ci
+npm run check
 ```
 
-Only after that audit should the TypeScript workspace/packages be bootstrapped.
+`npm run check` runs lint, typecheck, test, and build.
+
+Workspace packages are **skeletons** in this phase: they export package identity only. No `creatorId` mapping, no MetricSnapshot adapter, no SNS-AI scorer port, no provider I/O.
 
 ---
 
@@ -119,8 +115,6 @@ No production database, UI, social OAuth, direct provider publishing, or automat
 
 ---
 
-## First Cursor Agent task
+## Next phase
 
-Copy the exact prompt from the bottom of [`docs/CURSOR_AGENT_IMPLEMENTATION.md`](./docs/CURSOR_AGENT_IMPLEMENTATION.md).
-
-It intentionally instructs the agent to perform Phase 0 only and avoid a big-bang merge.
+Phase 2 is **canonical contracts + runtime validation**, after the identity review in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md). Do not port scoring or adapters in the same change.

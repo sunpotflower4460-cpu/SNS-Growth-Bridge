@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 2 canonical contracts + runtime validation.** `packages/contracts` ships schema major `1` (Zod parsers, `GrowthSubjectRef`, fixtures). Scoring, strategy builders, and adapters remain Phase 1 skeletons.
+**Phase 3 SNS-AI scorer parity.** `@sns-growth-bridge/scoring` ports `scorer.mjs` as `sns-ai-parity-v1`. Strategy builders and adapters remain Phase 1 skeletons. Contracts remain schema major `1`.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/) (merged via PR #7). Implemented identity / `likes` / blocked My-SNS metrics are specified in [`docs/CONTRACTS.md`](./docs/CONTRACTS.md). Historical review notes remain in [`docs/PHASE_2_CONTRACT_REVIEW.md`](./docs/PHASE_2_CONTRACT_REVIEW.md).
+Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3 notes are in [`docs/phase3/`](./docs/phase3/).
 
 ### Develop
 
@@ -65,7 +65,7 @@ npm run check
 
 `npm run check` runs lint, typecheck, test, and build.
 
-Do not invent `creatorId` from `ownerId` / acting user / SNS-AI `accountId`. Do not port the SNS-AI scorer or adapters in the same change as a later phase.
+Do not invent `creatorId` from `ownerId` / acting user / SNS-AI `accountId`. Do not change scoring formulas during parity. Do not enable SNS-AI autopilot.
 
 ---
 
@@ -117,4 +117,4 @@ No production database, UI, social OAuth, direct provider publishing, or automat
 
 ## Next phase
 
-Phase 3 is **SNS-AI scorer parity** as a pure function, using schema major `1` identity (`GrowthSubjectRef`) and ignoring `likes`. Do not start Phase 3 in a contracts PR. SNS-AI remains manual-only.
+Phase 4 is **pure strategy learning**, after this scorer parity is merged. Do not start Phase 4 in a scoring PR. SNS-AI remains manual-only.

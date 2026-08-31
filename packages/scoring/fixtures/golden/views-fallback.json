@@ -1,0 +1,63 @@
+{
+  "name": "views-fallback",
+  "target": {
+    "meta": {
+      "schemaVersion": 1,
+      "producer": "sns-ai",
+      "producedAt": "2026-08-01T12:00:00.000Z",
+      "traceId": "trace_post_views"
+    },
+    "snapshotId": "snap_post_views",
+    "postId": "post_views",
+    "subject": {
+      "accountId": "acct_example_x"
+    },
+    "platform": "x",
+    "externalPostId": "ext_views",
+    "capturedAt": "2026-08-01T12:00:00.000Z",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "views": 900,
+      "reposts": 9,
+      "bookmarks": 18,
+      "replies": 3,
+      "profileClicks": 6,
+      "urlClicks": 3
+    }
+  },
+  "peers": [],
+  "weightOverride": {},
+  "expected": {
+    "score": 65,
+    "confidence": 0.22,
+    "vector": {
+      "exposure": 900,
+      "shareRate": 0.01,
+      "saveRate": 0.02,
+      "conversationRate": 0.0033333333333333335,
+      "profileRate": 0.006666666666666667,
+      "clickRate": 0.0033333333333333335,
+      "followRate": 0,
+      "watchQuality": 0
+    },
+    "baseline": {
+      "exposure": 0,
+      "shareRate": 0,
+      "saveRate": 0,
+      "conversationRate": 0,
+      "profileRate": 0,
+      "clickRate": 0,
+      "followRate": 0,
+      "watchQuality": 0
+    },
+    "baselineCount": 0,
+    "components": {
+      "exposure": 65,
+      "shareRate": 65,
+      "saveRate": 65,
+      "conversationRate": 65,
+      "profileRate": 65,
+      "clickRate": 65
+    }
+  }
+}

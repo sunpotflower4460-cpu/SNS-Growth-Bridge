@@ -1,0 +1,68 @@
+{
+  "name": "x-empty-baseline",
+  "target": {
+    "meta": {
+      "schemaVersion": 1,
+      "producer": "sns-ai",
+      "producedAt": "2026-08-01T12:00:00.000Z",
+      "traceId": "trace_post_x_target"
+    },
+    "snapshotId": "snap_post_x_target",
+    "postId": "post_x_target",
+    "subject": {
+      "accountId": "acct_example_x"
+    },
+    "platform": "x",
+    "externalPostId": "ext_x_target",
+    "capturedAt": "2026-08-01T12:00:00.000Z",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "impressions": 2000,
+      "likes": 10,
+      "reposts": 20,
+      "quotes": 4,
+      "shares": 6,
+      "bookmarks": 30,
+      "replies": 8,
+      "comments": 2,
+      "profileClicks": 40,
+      "urlClicks": 16,
+      "follows": 3
+    }
+  },
+  "peers": [],
+  "weightOverride": {},
+  "expected": {
+    "score": 65,
+    "confidence": 0.25,
+    "vector": {
+      "exposure": 2000,
+      "shareRate": 0.015,
+      "saveRate": 0.015,
+      "conversationRate": 0.005,
+      "profileRate": 0.02,
+      "clickRate": 0.008,
+      "followRate": 0.0015,
+      "watchQuality": 0
+    },
+    "baseline": {
+      "exposure": 0,
+      "shareRate": 0,
+      "saveRate": 0,
+      "conversationRate": 0,
+      "profileRate": 0,
+      "clickRate": 0,
+      "followRate": 0,
+      "watchQuality": 0
+    },
+    "baselineCount": 0,
+    "components": {
+      "exposure": 65,
+      "shareRate": 65,
+      "saveRate": 65,
+      "conversationRate": 65,
+      "profileRate": 65,
+      "clickRate": 65
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "instagram-watch-quality",
+  "target": {
+    "meta": {
+      "schemaVersion": 1,
+      "producer": "sns-ai",
+      "producedAt": "2026-08-01T12:00:00.000Z",
+      "traceId": "trace_post_ig_watch"
+    },
+    "snapshotId": "snap_post_ig_watch",
+    "postId": "post_ig_watch",
+    "subject": {
+      "accountId": "acct_example_ig"
+    },
+    "platform": "instagram",
+    "externalPostId": "ext_ig_watch",
+    "capturedAt": "2026-08-01T12:00:00.000Z",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "impressions": 1500,
+      "shares": 10,
+      "saved": 20,
+      "comments": 5,
+      "follows": 2,
+      "videoViews": 1200,
+      "playback100": 900,
+      "reelSkipRate": 0.1
+    }
+  },
+  "peers": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_ig_peer"
+      },
+      "snapshotId": "snap_post_ig_peer",
+      "postId": "post_ig_peer",
+      "subject": {
+        "accountId": "acct_example_ig"
+      },
+      "platform": "instagram",
+      "externalPostId": "ext_ig_peer",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 2500,
+        "likes": 80,
+        "shares": 15,
+        "saved": 30,
+        "comments": 8,
+        "follows": 4,
+        "videoViews": 2000,
+        "playback100": 600,
+        "reelSkipRate": 0.5
+      }
+    }
+  ],
+  "weightOverride": {},
+  "expected": {
+    "score": 50.6,
+    "confidence": 0.31,
+    "vector": {
+      "exposure": 1500,
+      "shareRate": 0.006666666666666667,
+      "saveRate": 0.013333333333333334,
+      "conversationRate": 0.0033333333333333335,
+      "profileRate": 0,
+      "clickRate": 0,
+      "followRate": 0.0013333333333333333,
+      "watchQuality": 0.9
+    },
+    "baseline": {
+      "exposure": 2500,
+      "shareRate": 0.006,
+      "saveRate": 0.012,
+      "conversationRate": 0.0032,
+      "profileRate": 0,
+      "clickRate": 0,
+      "followRate": 0.0016,
+      "watchQuality": 0.5
+    },
+    "baselineCount": 1,
+    "components": {
+      "exposure": 33.786756928343465,
+      "shareRate": 53.3440680557911,
+      "saveRate": 53.3440680557911,
+      "conversationRate": 51.29566115917851,
+      "followRate": 44.213243071656535,
+      "watchQuality": 68.6559319442089
+    }
+  }
+}

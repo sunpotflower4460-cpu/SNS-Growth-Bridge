@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Pure metric normalization and performance scoring. Phase 1 skeleton only — SNS-AI scorer is not ported yet.",
+  "description": "Pure SNS-AI scorer parity (sns-ai-parity-v1). likes ignored. No adapters or provider I/O.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -19,6 +19,9 @@
   ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@sns-growth-bridge/contracts": "*"
   }
 }

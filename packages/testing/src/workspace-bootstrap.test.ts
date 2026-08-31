@@ -17,9 +17,9 @@ describe('workspace bootstrap', () => {
     expect(PACKAGE_NAME).toBe('@sns-growth-bridge/testing');
   });
 
-  it('keeps scoring, strategy, adapters, and testing on Phase 1; contracts is Phase 2', () => {
+  it('keeps scoring, strategy, adapters, and testing on Phase 1 except scoring Phase 3; contracts is Phase 2', () => {
     expect(contractsPhase).toBe(2);
-    expect(scoringPhase).toBe(1);
+    expect(scoringPhase).toBe(3);
     expect(strategyPhase).toBe(1);
     expect(adaptersMySnsPhase).toBe(1);
     expect(adaptersSnsAiPhase).toBe(1);

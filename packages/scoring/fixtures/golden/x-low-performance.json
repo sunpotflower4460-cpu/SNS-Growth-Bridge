@@ -1,0 +1,128 @@
+{
+  "name": "x-low-performance",
+  "target": {
+    "meta": {
+      "schemaVersion": 1,
+      "producer": "sns-ai",
+      "producedAt": "2026-08-01T12:00:00.000Z",
+      "traceId": "trace_post_x_low"
+    },
+    "snapshotId": "snap_post_x_low",
+    "postId": "post_x_low",
+    "subject": {
+      "accountId": "acct_example_x"
+    },
+    "platform": "x",
+    "externalPostId": "ext_x_low",
+    "capturedAt": "2026-08-01T12:00:00.000Z",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "impressions": 200,
+      "likes": 1,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "replies": 0,
+      "comments": 0,
+      "profileClicks": 0,
+      "urlClicks": 0
+    }
+  },
+  "peers": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_x_peer_a"
+      },
+      "snapshotId": "snap_post_x_peer_a",
+      "postId": "post_x_peer_a",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "ext_x_peer_a",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 1000,
+        "likes": 5,
+        "reposts": 10,
+        "quotes": 2,
+        "shares": 3,
+        "bookmarks": 12,
+        "replies": 4,
+        "comments": 1,
+        "profileClicks": 20,
+        "urlClicks": 8,
+        "follows": 1
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_x_peer_b"
+      },
+      "snapshotId": "snap_post_x_peer_b",
+      "postId": "post_x_peer_b",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "ext_x_peer_b",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 3000,
+        "likes": 50,
+        "reposts": 40,
+        "quotes": 8,
+        "shares": 12,
+        "bookmarks": 60,
+        "replies": 16,
+        "comments": 4,
+        "profileClicks": 80,
+        "urlClicks": 24,
+        "follows": 6
+      }
+    }
+  ],
+  "weightOverride": {},
+  "expected": {
+    "score": 12,
+    "confidence": 0.31,
+    "vector": {
+      "exposure": 200,
+      "shareRate": 0,
+      "saveRate": 0,
+      "conversationRate": 0,
+      "profileRate": 0,
+      "clickRate": 0,
+      "followRate": 0,
+      "watchQuality": 0
+    },
+    "baseline": {
+      "exposure": 2000,
+      "shareRate": 0.0175,
+      "saveRate": 0.016,
+      "conversationRate": 0.005833333333333334,
+      "profileRate": 0.023333333333333334,
+      "clickRate": 0.008,
+      "followRate": 0.0015,
+      "watchQuality": 0
+    },
+    "baselineCount": 2,
+    "components": {
+      "exposure": 0,
+      "shareRate": 15,
+      "saveRate": 15,
+      "conversationRate": 15,
+      "profileRate": 15,
+      "clickRate": 15
+    }
+  }
+}

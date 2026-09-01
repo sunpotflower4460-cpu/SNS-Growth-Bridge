@@ -1,9 +1,19 @@
 /**
- * Pure scoring package identity.
- *
- * Phase 1 ships no metricVector / baseline / platform-weight logic.
- * SNS-AI `src/analytics/scorer.mjs` remains the parity source for Phase 3.
+ * Pure SNS-AI scorer parity. Schema types come from `@sns-growth-bridge/contracts`.
  */
-export const PACKAGE_NAME = '@sns-growth-bridge/scoring' as const;
-
-export const PACKAGE_PHASE = 1 as const;
+export { PACKAGE_NAME, PACKAGE_PHASE, PARITY_TARGET_SHA, SCORER_VERSION } from './version.js';
+export { ScoringInputError, isScoringInputError } from './errors.js';
+export { clamp, safeRate, snsNumber, snsString } from './math.js';
+export {
+  DEFAULT_PLATFORM_WEIGHTS,
+  defaultWeightsForPlatform,
+  resolveWeights,
+  type ScoreWeightKey,
+  type ScoreWeights,
+  type ScoreWeightsOverride,
+} from './weights.js';
+export { METRIC_VECTOR_KEYS, metricVectorFromRaw } from './metric-vector.js';
+export { median } from './median.js';
+export { baselineVector, requireAccountId, selectBaselinePeers } from './baseline.js';
+export { relativeScore } from './relative-score.js';
+export { scoreSnapshot, toPerformanceScore, type ScoreSnapshotResult } from './score-snapshot.js';

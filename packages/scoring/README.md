@@ -1,7 +1,9 @@
 # `@sns-growth-bridge/scoring`
 
-Pure metric normalization and account-relative performance scoring.
+Pure TypeScript port of SNS-AI `src/analytics/scorer.mjs` (`sns-ai-parity-v1`).
 
-**Phase 1:** package skeleton only. The SNS-AI scorer is **not** ported here.
+**Phase 3:** exact-match golden parity. Formula, weights, baseline, median, likes-ignored, and rounding are frozen.
 
-Phase 3 must preserve current SNS-AI semantics (`metricVector`, median baseline, platform weights, confidence). `likes` must not change scorer parity even if later added to raw contracts.
+Does not implement strategy learning, adapters, or provider I/O.
+
+See `docs/phase3/SCORER_PARITY.md`.

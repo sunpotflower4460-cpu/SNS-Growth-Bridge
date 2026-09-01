@@ -1,0 +1,145 @@
+{
+  "name": "fallback-checkpoint-baseline",
+  "target": {
+    "meta": {
+      "schemaVersion": 1,
+      "producer": "sns-ai",
+      "producedAt": "2026-08-01T12:00:00.000Z",
+      "traceId": "trace_post_x_target"
+    },
+    "snapshotId": "snap_post_x_target",
+    "postId": "post_x_target",
+    "subject": {
+      "accountId": "acct_example_x"
+    },
+    "platform": "x",
+    "externalPostId": "ext_x_target",
+    "capturedAt": "2026-08-01T12:00:00.000Z",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "impressions": 2000,
+      "likes": 10,
+      "reposts": 20,
+      "quotes": 4,
+      "shares": 6,
+      "bookmarks": 30,
+      "replies": 8,
+      "comments": 2,
+      "profileClicks": 40,
+      "urlClicks": 16,
+      "follows": 3
+    }
+  },
+  "peers": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_x_peer_60m"
+      },
+      "snapshotId": "snap_post_x_peer_60m",
+      "postId": "post_x_peer_60m",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "ext_x_peer_60m",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 60,
+      "metrics": {
+        "impressions": 500,
+        "reposts": 2,
+        "bookmarks": 4,
+        "replies": 1,
+        "profileClicks": 5,
+        "urlClicks": 2
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_other_acct"
+      },
+      "snapshotId": "snap_post_other_acct",
+      "postId": "post_other_acct",
+      "subject": {
+        "accountId": "acct_other"
+      },
+      "platform": "x",
+      "externalPostId": "ext_other_acct",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 99999,
+        "reposts": 999,
+        "bookmarks": 999,
+        "replies": 999,
+        "profileClicks": 999,
+        "urlClicks": 999
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T12:00:00.000Z",
+        "traceId": "trace_post_ig_same_acct"
+      },
+      "snapshotId": "snap_post_ig_same_acct",
+      "postId": "post_ig_same_acct",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "instagram",
+      "externalPostId": "ext_ig_same_acct",
+      "capturedAt": "2026-08-01T12:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 88888,
+        "shares": 888,
+        "saved": 888,
+        "comments": 888,
+        "follows": 88,
+        "videoViews": 8000,
+        "playback100": 7000
+      }
+    }
+  ],
+  "weightOverride": {},
+  "expected": {
+    "score": 81.8,
+    "confidence": 0.32,
+    "vector": {
+      "exposure": 2000,
+      "shareRate": 0.015,
+      "saveRate": 0.015,
+      "conversationRate": 0.005,
+      "profileRate": 0.02,
+      "clickRate": 0.008,
+      "followRate": 0.0015,
+      "watchQuality": 0
+    },
+    "baseline": {
+      "exposure": 500,
+      "shareRate": 0.004,
+      "saveRate": 0.008,
+      "conversationRate": 0.002,
+      "profileRate": 0.01,
+      "clickRate": 0.004,
+      "followRate": 0,
+      "watchQuality": 0
+    },
+    "baselineCount": 1,
+    "components": {
+      "exposure": 94,
+      "shareRate": 91.95159310338741,
+      "saveRate": 69.95159310338741,
+      "conversationRate": 79.08241808752197,
+      "profileRate": 72,
+      "clickRate": 72
+    }
+  }
+}

@@ -5,7 +5,14 @@ import tseslint from 'typescript-eslint';
 
 export default defineConfig(
   {
-    ignores: ['**/dist/**', '**/node_modules/**', 'coverage/**', '**/fixtures/reference/**', 'packages/scoring/scripts/**'],
+    ignores: [
+      '**/dist/**',
+      '**/node_modules/**',
+      'coverage/**',
+      '**/fixtures/reference/**',
+      'packages/scoring/scripts/**',
+      'packages/strategy/scripts/**',
+    ],
   },
   eslint.configs.recommended,
   {

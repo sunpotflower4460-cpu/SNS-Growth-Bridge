@@ -1,0 +1,75 @@
+/**
+ * Frozen copy of `buildStrategy()` from SNS-AI `src/learning/learn.mjs` at
+ * 914c70ee4666015f93603eef9a2f3dd9a1a7de08
+ * (blob 9ffae3058c70c873757a87522387c2d62e89e8e9).
+ *
+ * Byte-identical to the Phase 0 / Phase 3 reference SHA
+ * 3bd90cc8ac80da84df949799dd4b8be2dc109767 — see
+ * docs/phase4/STRATEGY_SOURCE_AUDIT.md.
+ *
+ * `buildStrategy()` body below is copied verbatim, character-for-character,
+ * from the source file (only the import lines were rewritten to point at
+ * sibling frozen files instead of `../lib/*`, `../analytics/store.mjs`,
+ * `../analytics/scorer.mjs`, `./features.mjs`).
+ *
+ * Intentionally NOT ported (Phase 4 scope is `buildStrategy()` only, per the
+ * Phase 4 instructions):
+ *   - `learnAll()` — JSONL I/O (`loadAccounts`, `readHistory`,
+ *     `readMetricSnapshots`, `saveStrategy`, `appendAudit`)
+ *   - `ensureExperiment()` / `evaluateExperiment()` calls — experiment
+ *     lifecycle is a separate phase
+ *
+ * Do not "improve" this file. Golden expected outputs are generated from it.
+ */
+import { latestSnapshots } from './sns-ai-latest-snapshots.mjs';
+import { scoreSnapshot } from './sns-ai-scorer.mjs';
+import { FEATURE_DIMENSIONS, historyFeatures } from './sns-ai-features.mjs';
+
+function mean(values) { return values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0; }
+function clamp(value, min, max) { return Math.min(max, Math.max(min, value)); }
+
+export function buildStrategy({ accountId, account, history, snapshots, now = new Date() }) {
+  const windowDays = Math.max(1, Number(account.learning?.strategyWindowDays ?? 60));
+  const cutoff = now.getTime() - windowDays * 86_400_000;
+  const recentHistory = history.filter((h) => h.account === accountId && h.providerPostId && Date.parse(h.at || '') >= cutoff);
+  const allowedPostIds = new Set(recentHistory.map((h) => String(h.providerPostId)));
+  const windowSnapshots = snapshots.filter((s) => s.account === accountId && allowedPostIds.has(String(s.providerPostId)));
+  const latest = latestSnapshots(windowSnapshots).filter((s) => Number(s.checkpointMinutes) >= Number(account.learning?.matureCheckpointMinutes ?? 1440));
+  const byPost = new Map(recentHistory.map((h) => [String(h.providerPostId), h]));
+  const timeZone = account.schedule?.timezone || account.timezone || 'Asia/Tokyo';
+  const samples = latest.map((snapshot) => {
+    const post = byPost.get(String(snapshot.providerPostId)); if (!post) return null;
+    const scored = scoreSnapshot(snapshot, windowSnapshots, account.objectives?.weights || {});
+    return { snapshot, post, score: scored.score, confidence: scored.confidence, features: historyFeatures(post, timeZone) };
+  }).filter(Boolean);
+  const sampleScores = samples.map((s) => s.score);
+  const overall = sampleScores.length ? mean(sampleScores) : 50;
+  const featureStats = {};
+  for (const dimension of FEATURE_DIMENSIONS) {
+    const groups = new Map();
+    for (const sample of samples) {
+      const value = String(sample.features?.[dimension] || '').trim(); if (!value) continue;
+      if (!groups.has(value)) groups.set(value, []); groups.get(value).push(sample.score);
+    }
+    featureStats[dimension] = Object.fromEntries([...groups.entries()].map(([value, scores]) => [value, {
+      n: scores.length, averageScore: Math.round(mean(scores) * 10) / 10,
+      lift: Math.round((mean(scores) - overall) * 10) / 10,
+      confidence: Math.round(clamp(scores.length / 6, 0, 1) * 100) / 100
+    }]));
+  }
+  const minSamples = Number(account.learning?.minSamplesPerPattern ?? 2);
+  const ranked = [];
+  for (const [dimension, values] of Object.entries(featureStats)) {
+    for (const [value, stat] of Object.entries(values)) if (stat.n >= minSamples) ranked.push({ dimension, value, ...stat });
+  }
+  ranked.sort((a, b) => b.lift - a.lift);
+  const preferred = ranked.filter((x) => x.lift > 0).slice(0, 8);
+  const avoid = ranked.filter((x) => x.lift < 0).sort((a, b) => a.lift - b.lift).slice(0, 6);
+  return {
+    account: accountId, generatedAt: now.toISOString(), strategyWindowDays: windowDays, sampleSize: samples.length,
+    overallScore: Math.round(overall * 10) / 10,
+    confidence: Math.round(clamp(samples.length / Number(account.learning?.fullConfidencePosts ?? 20), 0, 1) * 100) / 100,
+    exploreRate: Number(account.learning?.exploreRate ?? 0.2), preferred, avoid, featureStats,
+    guardrail: 'Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions.'
+  };
+}

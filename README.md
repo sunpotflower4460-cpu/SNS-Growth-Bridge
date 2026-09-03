@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 3 SNS-AI scorer parity.** `@sns-growth-bridge/scoring` ports `scorer.mjs` as `sns-ai-parity-v1`. Strategy builders and adapters remain Phase 1 skeletons. Contracts remain schema major `1`.
+**Phase 4 SNS-AI strategy learning parity.** `@sns-growth-bridge/strategy` ports `buildStrategy()` as `sns-ai-learn-parity-v1`, reusing `@sns-growth-bridge/scoring` (`sns-ai-parity-v1`) unmodified for scoring. Adapters remain Phase 1 skeletons. Contracts remain schema major `1`.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3 notes are in [`docs/phase3/`](./docs/phase3/).
+Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3 notes are in [`docs/phase3/`](./docs/phase3/). Phase 4 notes are in [`docs/phase4/`](./docs/phase4/).
 
 ### Develop
 
@@ -117,4 +117,4 @@ No production database, UI, social OAuth, direct provider publishing, or automat
 
 ## Next phase
 
-Phase 4 is **pure strategy learning**, after this scorer parity is merged. Do not start Phase 4 in a scoring PR. SNS-AI remains manual-only.
+Phase 5+ (adapters, experiments, My-SNS integration, Creator Action / Anchor / Orbit generation) is not started. Do not start it in a strategy-parity PR. SNS-AI remains manual-only.

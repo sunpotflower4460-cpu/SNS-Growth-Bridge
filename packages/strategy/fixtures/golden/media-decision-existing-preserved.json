@@ -1,0 +1,92 @@
+{
+  "name": "media-decision-existing-preserved",
+  "accountId": "acct_music",
+  "now": "2026-08-30T00:00:00.000Z",
+  "config": {},
+  "history": [
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p1",
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "features": {
+        "hook": "a",
+        "mediaDecision": "generate"
+      },
+      "hasLegacyMediaUrl": true
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p1_1440"
+      },
+      "snapshotId": "snap_p1_1440",
+      "postId": "post_p1",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p1",
+      "capturedAt": "2026-08-22T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 2000,
+        "reposts": 20,
+        "quotes": 4,
+        "shares": 6,
+        "bookmarks": 30,
+        "replies": 8,
+        "comments": 2,
+        "profileClicks": 40,
+        "urlClicks": 16,
+        "follows": 3
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_music",
+    "generatedAt": "2026-08-30T00:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 1,
+    "overallScore": 65,
+    "confidence": 0.05,
+    "exploreRate": 0.2,
+    "preferred": [],
+    "avoid": [],
+    "featureStats": {
+      "topic": {},
+      "angle": {},
+      "hook": {
+        "a": {
+          "n": 1,
+          "averageScore": 65,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      },
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "generate": {
+          "n": 1,
+          "averageScore": 65,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 1,
+          "averageScore": 65,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

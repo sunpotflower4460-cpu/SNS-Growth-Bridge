@@ -1,0 +1,941 @@
+{
+  "name": "preferred-cap-8",
+  "accountId": "acct_music",
+  "now": "2026-08-30T00:00:00.000Z",
+  "config": {},
+  "history": [
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_1",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_1"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_1_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_1"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_2",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_2"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_2_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_2"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_3",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_3"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_3_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_3"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_4",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_4"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_4_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_4"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_5",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_5"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_5_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_5"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_6",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_6"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_6_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_6"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_7",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_7"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_7_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_7"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_8",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_8"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_8_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_8"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_9",
+      "publishedAt": "2026-07-31T00:00:00.000Z",
+      "features": {
+        "topic": "topic_9"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_high_9_b",
+      "publishedAt": "2026-08-03T00:00:00.000Z",
+      "features": {
+        "topic": "topic_9"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_anchor_a",
+      "publishedAt": "2026-08-06T00:00:00.000Z",
+      "features": {
+        "topic": "topic_anchor"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_anchor_b",
+      "publishedAt": "2026-08-10T00:00:00.000Z",
+      "features": {
+        "topic": "topic_anchor"
+      },
+      "hasLegacyMediaUrl": false
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_1_1440"
+      },
+      "snapshotId": "snap_p_high_1_1440",
+      "postId": "post_p_high_1",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_1",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_1_b_1440"
+      },
+      "snapshotId": "snap_p_high_1_b_1440",
+      "postId": "post_p_high_1_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_1_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_2_1440"
+      },
+      "snapshotId": "snap_p_high_2_1440",
+      "postId": "post_p_high_2",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_2",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_2_b_1440"
+      },
+      "snapshotId": "snap_p_high_2_b_1440",
+      "postId": "post_p_high_2_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_2_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_3_1440"
+      },
+      "snapshotId": "snap_p_high_3_1440",
+      "postId": "post_p_high_3",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_3",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_3_b_1440"
+      },
+      "snapshotId": "snap_p_high_3_b_1440",
+      "postId": "post_p_high_3_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_3_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_4_1440"
+      },
+      "snapshotId": "snap_p_high_4_1440",
+      "postId": "post_p_high_4",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_4",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_4_b_1440"
+      },
+      "snapshotId": "snap_p_high_4_b_1440",
+      "postId": "post_p_high_4_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_4_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_5_1440"
+      },
+      "snapshotId": "snap_p_high_5_1440",
+      "postId": "post_p_high_5",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_5",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_5_b_1440"
+      },
+      "snapshotId": "snap_p_high_5_b_1440",
+      "postId": "post_p_high_5_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_5_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_6_1440"
+      },
+      "snapshotId": "snap_p_high_6_1440",
+      "postId": "post_p_high_6",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_6",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_6_b_1440"
+      },
+      "snapshotId": "snap_p_high_6_b_1440",
+      "postId": "post_p_high_6_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_6_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_7_1440"
+      },
+      "snapshotId": "snap_p_high_7_1440",
+      "postId": "post_p_high_7",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_7",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_7_b_1440"
+      },
+      "snapshotId": "snap_p_high_7_b_1440",
+      "postId": "post_p_high_7_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_7_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_8_1440"
+      },
+      "snapshotId": "snap_p_high_8_1440",
+      "postId": "post_p_high_8",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_8",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_8_b_1440"
+      },
+      "snapshotId": "snap_p_high_8_b_1440",
+      "postId": "post_p_high_8_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_8_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_9_1440"
+      },
+      "snapshotId": "snap_p_high_9_1440",
+      "postId": "post_p_high_9",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_9",
+      "capturedAt": "2026-08-02T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_high_9_b_1440"
+      },
+      "snapshotId": "snap_p_high_9_b_1440",
+      "postId": "post_p_high_9_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_high_9_b",
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_anchor_a_1440"
+      },
+      "snapshotId": "snap_p_anchor_a_1440",
+      "postId": "post_p_anchor_a",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_anchor_a",
+      "capturedAt": "2026-08-08T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 400,
+        "reposts": 1,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 1,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 1,
+        "urlClicks": 0,
+        "follows": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_anchor_b_1440"
+      },
+      "snapshotId": "snap_p_anchor_b_1440",
+      "postId": "post_p_anchor_b",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_anchor_b",
+      "capturedAt": "2026-08-12T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 400,
+        "reposts": 1,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 1,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 1,
+        "urlClicks": 0,
+        "follows": 0
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_music",
+    "generatedAt": "2026-08-30T00:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 20,
+    "overallScore": 45.4,
+    "confidence": 1,
+    "exploreRate": 0.2,
+    "preferred": [
+      {
+        "dimension": "topic",
+        "value": "topic_1",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_2",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_3",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_4",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_5",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_6",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_7",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "topic_8",
+        "n": 2,
+        "averageScore": 50,
+        "lift": 4.6,
+        "confidence": 0.33
+      }
+    ],
+    "avoid": [
+      {
+        "dimension": "topic",
+        "value": "topic_anchor",
+        "n": 2,
+        "averageScore": 3.8,
+        "lift": -41.6,
+        "confidence": 0.33
+      }
+    ],
+    "featureStats": {
+      "topic": {
+        "topic_1": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_2": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_3": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_4": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_5": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_6": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_7": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_8": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_9": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": 4.6,
+          "confidence": 0.33
+        },
+        "topic_anchor": {
+          "n": 2,
+          "averageScore": 3.8,
+          "lift": -41.6,
+          "confidence": 0.33
+        }
+      },
+      "angle": {},
+      "hook": {},
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "none": {
+          "n": 20,
+          "averageScore": 45.4,
+          "lift": 0,
+          "confidence": 1
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 20,
+          "averageScore": 45.4,
+          "lift": 0,
+          "confidence": 1
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "name": "min-samples-filter",
+  "accountId": "acct_music",
+  "now": "2026-08-30T00:00:00.000Z",
+  "config": {},
+  "history": [
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p_rare",
+      "publishedAt": "2026-08-08T00:00:00.000Z",
+      "features": {
+        "hook": "rare"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p1",
+      "publishedAt": "2026-08-12T00:00:00.000Z",
+      "features": {
+        "hook": "common"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p2",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "hook": "common"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p3",
+      "publishedAt": "2026-08-18T00:00:00.000Z",
+      "features": {
+        "hook": "filler"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_music",
+      "externalPostId": "p4",
+      "publishedAt": "2026-08-21T00:00:00.000Z",
+      "features": {
+        "hook": "filler"
+      },
+      "hasLegacyMediaUrl": false
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p_rare_1440"
+      },
+      "snapshotId": "snap_p_rare_1440",
+      "postId": "post_p_rare",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p_rare",
+      "capturedAt": "2026-08-10T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p1_1440"
+      },
+      "snapshotId": "snap_p1_1440",
+      "postId": "post_p1",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p1",
+      "capturedAt": "2026-08-14T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p2_1440"
+      },
+      "snapshotId": "snap_p2_1440",
+      "postId": "post_p2",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p2",
+      "capturedAt": "2026-08-17T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 6000,
+        "reposts": 300,
+        "quotes": 60,
+        "shares": 90,
+        "bookmarks": 400,
+        "replies": 100,
+        "comments": 30,
+        "profileClicks": 500,
+        "urlClicks": 200,
+        "follows": 15
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p3_1440"
+      },
+      "snapshotId": "snap_p3_1440",
+      "postId": "post_p3",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p3",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 400,
+        "reposts": 1,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 1,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 1,
+        "urlClicks": 0,
+        "follows": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-08-01T00:00:00.000Z",
+        "traceId": "trace_p4_1440"
+      },
+      "snapshotId": "snap_p4_1440",
+      "postId": "post_p4",
+      "subject": {
+        "accountId": "acct_music"
+      },
+      "platform": "x",
+      "externalPostId": "p4",
+      "capturedAt": "2026-08-23T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 400,
+        "reposts": 1,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 1,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 1,
+        "urlClicks": 0,
+        "follows": 0
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_music",
+    "generatedAt": "2026-08-30T00:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 5,
+    "overallScore": 44.1,
+    "confidence": 0.25,
+    "exploreRate": 0.2,
+    "preferred": [
+      {
+        "dimension": "hook",
+        "value": "common",
+        "n": 2,
+        "averageScore": 71,
+        "lift": 26.9,
+        "confidence": 0.33
+      }
+    ],
+    "avoid": [
+      {
+        "dimension": "hook",
+        "value": "filler",
+        "n": 2,
+        "averageScore": 3.8,
+        "lift": -40.3,
+        "confidence": 0.33
+      }
+    ],
+    "featureStats": {
+      "topic": {},
+      "angle": {},
+      "hook": {
+        "rare": {
+          "n": 1,
+          "averageScore": 71,
+          "lift": 26.9,
+          "confidence": 0.17
+        },
+        "common": {
+          "n": 2,
+          "averageScore": 71,
+          "lift": 26.9,
+          "confidence": 0.33
+        },
+        "filler": {
+          "n": 2,
+          "averageScore": 3.8,
+          "lift": -40.3,
+          "confidence": 0.33
+        }
+      },
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "none": {
+          "n": 5,
+          "averageScore": 44.1,
+          "lift": 0,
+          "confidence": 0.83
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 5,
+          "averageScore": 44.1,
+          "lift": 0,
+          "confidence": 0.83
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Pure growth-strategy learning. Phase 1 skeleton only — no builder yet.",
+  "description": "Pure SNS-AI strategy-learning parity (sns-ai-learn-parity-v1). No adapters, experiments, or provider I/O.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -19,6 +19,10 @@
   ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@sns-growth-bridge/contracts": "*",
+    "@sns-growth-bridge/scoring": "*"
   }
 }

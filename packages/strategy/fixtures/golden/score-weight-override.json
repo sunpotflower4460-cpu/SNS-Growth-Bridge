@@ -1,0 +1,271 @@
+{
+  "name": "score-weight-override",
+  "accountId": "acct_example_x",
+  "now": "2026-09-01T12:00:00.000Z",
+  "config": {
+    "scoreWeights": {
+      "exposure": 0.5,
+      "clickRate": 0.5,
+      "shareRate": 0,
+      "saveRate": 0,
+      "conversationRate": 0,
+      "profileRate": 0
+    }
+  },
+  "posts": [
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "high_a",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "growth",
+        "hook": "story"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "high_b",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "growth",
+        "hook": "story"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "low_a",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "news",
+        "hook": "question"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "low_b",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "news",
+        "hook": "question"
+      },
+      "hasLegacyMediaUrl": false
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_high_a_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_high_a_1440",
+      "postId": "post_high_a",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "high_a",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_high_b_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_high_b_1440",
+      "postId": "post_high_b",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "high_b",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_low_a_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_low_a_1440",
+      "postId": "post_low_a",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "low_a",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_low_b_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_low_b_1440",
+      "postId": "post_low_b",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "low_b",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_example_x",
+    "generatedAt": "2026-09-01T12:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 4,
+    "overallScore": 45,
+    "confidence": 0.2,
+    "exploreRate": 0.2,
+    "preferred": [
+      {
+        "dimension": "topic",
+        "value": "growth",
+        "n": 2,
+        "averageScore": 82.5,
+        "lift": 37.5,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "hook",
+        "value": "story",
+        "n": 2,
+        "averageScore": 82.5,
+        "lift": 37.5,
+        "confidence": 0.33
+      }
+    ],
+    "avoid": [
+      {
+        "dimension": "topic",
+        "value": "news",
+        "n": 2,
+        "averageScore": 7.5,
+        "lift": -37.5,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "hook",
+        "value": "question",
+        "n": 2,
+        "averageScore": 7.5,
+        "lift": -37.5,
+        "confidence": 0.33
+      }
+    ],
+    "featureStats": {
+      "topic": {
+        "growth": {
+          "n": 2,
+          "averageScore": 82.5,
+          "lift": 37.5,
+          "confidence": 0.33
+        },
+        "news": {
+          "n": 2,
+          "averageScore": 7.5,
+          "lift": -37.5,
+          "confidence": 0.33
+        }
+      },
+      "angle": {},
+      "hook": {
+        "story": {
+          "n": 2,
+          "averageScore": 82.5,
+          "lift": 37.5,
+          "confidence": 0.33
+        },
+        "question": {
+          "n": 2,
+          "averageScore": 7.5,
+          "lift": -37.5,
+          "confidence": 0.33
+        }
+      },
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "none": {
+          "n": 4,
+          "averageScore": 45,
+          "lift": 0,
+          "confidence": 0.67
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 4,
+          "averageScore": 45,
+          "lift": 0,
+          "confidence": 0.67
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

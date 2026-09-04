@@ -1,0 +1,837 @@
+{
+  "name": "avoid-cap-6",
+  "accountId": "acct_example_x",
+  "now": "2026-09-01T12:00:00.000Z",
+  "config": {},
+  "posts": [
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_1",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad1"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_2",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad1"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_3",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad2"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_4",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad2"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_5",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad3"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_6",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad3"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_7",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad4"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_8",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad4"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_9",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad5"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_10",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad5"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_11",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad6"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_12",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad6"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_13",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad7"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_14",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "bad7"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_high_1",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "ballast"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_high_2",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "ballast"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_high_3",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "ballast"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "avoid_high_4",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "ballast"
+      },
+      "hasLegacyMediaUrl": false
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_1_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_1_1440",
+      "postId": "post_avoid_1",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_1",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_2_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_2_1440",
+      "postId": "post_avoid_2",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_2",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_3_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_3_1440",
+      "postId": "post_avoid_3",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_3",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_4_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_4_1440",
+      "postId": "post_avoid_4",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_4",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_5_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_5_1440",
+      "postId": "post_avoid_5",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_5",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_6_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_6_1440",
+      "postId": "post_avoid_6",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_6",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_7_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_7_1440",
+      "postId": "post_avoid_7",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_7",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_8_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_8_1440",
+      "postId": "post_avoid_8",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_8",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_9_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_9_1440",
+      "postId": "post_avoid_9",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_9",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_10_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_10_1440",
+      "postId": "post_avoid_10",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_10",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_11_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_11_1440",
+      "postId": "post_avoid_11",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_11",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_12_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_12_1440",
+      "postId": "post_avoid_12",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_12",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_13_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_13_1440",
+      "postId": "post_avoid_13",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_13",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_14_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_14_1440",
+      "postId": "post_avoid_14",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_14",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 200,
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0,
+        "bookmarks": 0,
+        "replies": 0,
+        "comments": 0,
+        "profileClicks": 0,
+        "urlClicks": 0
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_high_1_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_high_1_1440",
+      "postId": "post_avoid_high_1",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_high_1",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_high_2_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_high_2_1440",
+      "postId": "post_avoid_high_2",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_high_2",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_high_3_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_high_3_1440",
+      "postId": "post_avoid_high_3",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_high_3",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_avoid_high_4_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_avoid_high_4_1440",
+      "postId": "post_avoid_high_4",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "avoid_high_4",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_example_x",
+    "generatedAt": "2026-09-01T12:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 18,
+    "overallScore": 54.9,
+    "confidence": 0.9,
+    "exploreRate": 0.2,
+    "preferred": [
+      {
+        "dimension": "topic",
+        "value": "ballast",
+        "n": 4,
+        "averageScore": 72,
+        "lift": 17.1,
+        "confidence": 0.67
+      }
+    ],
+    "avoid": [
+      {
+        "dimension": "topic",
+        "value": "bad1",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "bad2",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "bad3",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "bad4",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "bad5",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      },
+      {
+        "dimension": "topic",
+        "value": "bad6",
+        "n": 2,
+        "averageScore": 50,
+        "lift": -4.9,
+        "confidence": 0.33
+      }
+    ],
+    "featureStats": {
+      "topic": {
+        "bad1": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad2": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad3": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad4": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad5": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad6": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "bad7": {
+          "n": 2,
+          "averageScore": 50,
+          "lift": -4.9,
+          "confidence": 0.33
+        },
+        "ballast": {
+          "n": 4,
+          "averageScore": 72,
+          "lift": 17.1,
+          "confidence": 0.67
+        }
+      },
+      "angle": {},
+      "hook": {},
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "none": {
+          "n": 18,
+          "averageScore": 54.9,
+          "lift": 0,
+          "confidence": 1
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 18,
+          "averageScore": 54.9,
+          "lift": 0,
+          "confidence": 1
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

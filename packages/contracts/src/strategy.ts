@@ -26,6 +26,28 @@ export const strategyPatternSchema = z.object({
 
 export type StrategyPattern = z.infer<typeof strategyPatternSchema>;
 
+/**
+ * Full per-feature evidence used by SNS-AI candidate ranking.
+ * This is additive within schema major 1: older snapshots may omit it, but
+ * consumers that need exact SNS-AI ranking parity must fail closed when an
+ * active strategy does not provide it.
+ */
+export const strategyFeatureStatSchema = z.object({
+  sampleSize: positiveInt,
+  averageScore: score100,
+  lift: z.number(),
+  confidence,
+});
+
+export type StrategyFeatureStat = z.infer<typeof strategyFeatureStatSchema>;
+
+export const strategyFeatureStatsSchema = z.partialRecord(
+  growthFeatureDimensionSchema,
+  z.record(nonEmptyString, strategyFeatureStatSchema),
+);
+
+export type StrategyFeatureStats = z.infer<typeof strategyFeatureStatsSchema>;
+
 export const growthStrategySnapshotSchema = z
   .object({
     meta: envelopeMetaSchema,
@@ -56,6 +78,7 @@ export const growthStrategySnapshotSchema = z
     exploreRate: z.number().min(0).max(1),
     preferred: z.array(strategyPatternSchema),
     avoid: z.array(strategyPatternSchema),
+    featureStats: strategyFeatureStatsSchema.optional(),
     hardConstraintsDigest: nonEmptyString.optional(),
     inputsDigest: nonEmptyString,
     status: z.enum(['active', 'insufficient-evidence', 'invalid-input']),
@@ -67,6 +90,16 @@ export const growthStrategySnapshotSchema = z
           code: 'custom',
           message: 'insufficient-evidence strategies must have sampleSize 0, confidence 0, and empty preferred/avoid',
           path: ['status'],
+        });
+      }
+      const hasFeatureStats = Object.values(value.featureStats ?? {}).some(
+        (dimensionStats) => Object.keys(dimensionStats ?? {}).length > 0,
+      );
+      if (hasFeatureStats) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'insufficient-evidence strategies must not carry non-empty featureStats',
+          path: ['featureStats'],
         });
       }
     }

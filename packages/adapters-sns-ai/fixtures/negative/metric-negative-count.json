@@ -1,0 +1,16 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_metric_negative"
+  },
+  "row": {
+    "collectedAt": "2026-09-04T08:00:00.000Z",
+    "account": "music-tools-x",
+    "providerPostId": "ext_x_1",
+    "platform": "x",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "impressions": -5
+    }
+  }
+}

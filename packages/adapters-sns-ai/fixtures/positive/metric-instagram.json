@@ -1,0 +1,22 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_metric_ig"
+  },
+  "row": {
+    "collectedAt": "2026-09-04T08:00:00.000Z",
+    "account": "example-instagram",
+    "providerPostId": "ext_ig_1",
+    "platform": "instagram",
+    "checkpointMinutes": 1440,
+    "metrics": {
+      "views": 400,
+      "reach": 350,
+      "likes": 12,
+      "saved": 9,
+      "follows": 4,
+      "profileVisits": 7,
+      "reelSkipRate": 0.15
+    }
+  }
+}

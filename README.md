@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 5 My-SNS read-only adapters.** `@sns-growth-bridge/adapters-my-sns` maps BrandProfile, HumanCorrection, and confirmed PublishedPost. MetricSnapshot remains blocked. SNS-AI adapters remain a Phase 1 skeleton. Contracts remain schema major `1`.
+**Phase 6 SNS-AI read-only adapters.** `@sns-growth-bridge/adapters-sns-ai` maps history, MetricSnapshot, ExplicitFeedback, and Phase 4 strategy input. My-SNS adapters remain Phase 5. Contracts remain schema major `1`. SNS-AI remains manual-only.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3–5 notes are in [`docs/phase3/`](./docs/phase3/), [`docs/phase4/`](./docs/phase4/), and [`docs/phase5/`](./docs/phase5/).
+Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3–6 notes are in [`docs/phase3/`](./docs/phase3/), [`docs/phase4/`](./docs/phase4/), [`docs/phase5/`](./docs/phase5/), and [`docs/phase6/`](./docs/phase6/).
 
 ### Develop
 

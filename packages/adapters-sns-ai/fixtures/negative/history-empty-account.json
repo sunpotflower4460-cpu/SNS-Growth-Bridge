@@ -1,0 +1,14 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_history_empty_account"
+  },
+  "row": {
+    "at": "2026-09-03T08:00:00.000Z",
+    "account": "",
+    "providerPostId": "ext_x_1",
+    "platform": "x",
+    "status": "published",
+    "text": "Empty account must not become sns-ai::ext"
+  }
+}

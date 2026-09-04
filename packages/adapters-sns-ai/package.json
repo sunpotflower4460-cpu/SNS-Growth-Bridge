@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Read-only SNS-AI adapter. Phase 1 skeleton only — does not enable accounts, cron, or provider calls.",
+  "description": "Read-only SNS-AI → Canonical adapters. No JSONL transport, provider calls, or autonomy.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -19,6 +19,11 @@
   ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@sns-growth-bridge/contracts": "*",
+    "@sns-growth-bridge/scoring": "*",
+    "@sns-growth-bridge/strategy": "*"
   }
 }

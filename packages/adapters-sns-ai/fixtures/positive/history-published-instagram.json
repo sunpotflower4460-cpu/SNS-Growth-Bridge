@@ -1,0 +1,14 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_history_ig"
+  },
+  "row": {
+    "at": "2026-09-03T09:00:00.000Z",
+    "account": "example-instagram",
+    "providerPostId": "ext_ig_1",
+    "platform": "instagram",
+    "status": "published",
+    "text": "Synthetic Instagram post"
+  }
+}

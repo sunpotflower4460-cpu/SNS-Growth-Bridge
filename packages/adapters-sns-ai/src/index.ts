@@ -1,10 +1,30 @@
 /**
- * Read-only SNS-AI adapter identity.
+ * Read-only SNS-AI → Canonical adapters.
  *
- * Phase 1 ships no history/metrics/feedback mapping and does not
- * read or write `config/runtime-policy.json`.
- * Manual-only invariants must remain untouched.
+ * Phase 6: history, metrics, explicit feedback, and Phase 4 strategy input.
+ * No JSONL transport, provider calls, Artist Support mapping, or autonomy.
+ * account → subject.accountId only. creatorId / workspaceId are never invented.
  */
-export const PACKAGE_NAME = '@sns-growth-bridge/adapters-sns-ai' as const;
-
-export const PACKAGE_PHASE = 1 as const;
+export {
+  PACKAGE_NAME,
+  PACKAGE_PHASE,
+  SNS_AI_AUDIT_SHA,
+  SNS_AI_METRIC_SNAPSHOT_STATUS,
+} from './version.js';
+export { AdapterReason, type AdapterResult } from './result.js';
+export type {
+  SnsAiAdapterContext,
+  SnsAiFeedbackSource,
+  SnsAiHistoryAdapterInput,
+  SnsAiHistorySource,
+  SnsAiMetricAdapterInput,
+  SnsAiMetricSource,
+} from './source-types.js';
+export { SNS_AI_RUNTIME_POLICY_INVARIANTS } from './runtime-policy.js';
+export { adaptSnsAiHistoryToPublishedPost } from './history.js';
+export { adaptSnsAiMetricSnapshot } from './metric.js';
+export { adaptSnsAiHumanFeedback, feedbackEventId } from './feedback.js';
+export {
+  adaptSnsAiHistoryToStrategyPostEvidence,
+  adaptSnsAiHistoryRowsToStrategyPostEvidence,
+} from './strategy-input.js';

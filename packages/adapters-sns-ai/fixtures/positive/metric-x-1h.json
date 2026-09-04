@@ -1,0 +1,19 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_metric_x_1h"
+  },
+  "row": {
+    "collectedAt": "2026-09-03T09:00:00.000Z",
+    "account": "music-tools-x",
+    "providerPostId": "ext_x_1",
+    "platform": "x",
+    "checkpointMinutes": 60,
+    "metrics": {
+      "impressions": 400,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 1
+    }
+  }
+}

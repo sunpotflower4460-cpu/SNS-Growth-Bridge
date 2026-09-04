@@ -16,6 +16,8 @@ export default defineConfig({
       '@sns-growth-bridge/strategy': packageSrc('strategy'),
       '@sns-growth-bridge/adapters-my-sns': packageSrc('adapters-my-sns'),
       '@sns-growth-bridge/adapters-sns-ai': packageSrc('adapters-sns-ai'),
+      '@sns-growth-bridge/identity-links': packageSrc('identity-links'),
+      '@sns-growth-bridge/runtime-transport': packageSrc('runtime-transport'),
       '@sns-growth-bridge/testing': packageSrc('testing'),
     },
   },

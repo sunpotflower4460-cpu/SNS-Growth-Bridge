@@ -1,0 +1,5 @@
+{"at":"2026-09-01T08:00:00.000Z","account":"artist-x-fixture","providerPostId":"ext_x_target","platform":"x","status":"published","text":"Synthetic target post","features":{"topic":"music","hook":"question"},"mediaUrl":"https://example.invalid/private/asset.jpg?X-Amz-Signature=abc"}
+
+{"at":"2026-09-02T08:00:00.000Z","account":"artist-x-fixture","providerPostId":"ext_x_peer","platform":"x","status":"published","text":"Synthetic peer post","features":{"topic":"gear","hook":"list"}}
+{"at":"2026-09-02T09:00:00.000Z","account":"other-account","providerPostId":"ext_other","platform":"x","status":"published","text":"Must be ignored"}
+{"at":"2026-09-02T10:00:00.000Z","account":"artist-x-fixture","providerPostId":"ext_failed","platform":"x","status":"failed","text":"Not published"}

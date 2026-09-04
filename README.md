@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 6 SNS-AI read-only adapters.** `@sns-growth-bridge/adapters-sns-ai` maps history, MetricSnapshot, ExplicitFeedback, and Phase 4 strategy input. My-SNS adapters remain Phase 5. Contracts remain schema major `1`. SNS-AI remains manual-only.
+**Phase 7A Cross-product identity + read-only transport.** `@sns-growth-bridge/identity-links` binds My-SNS `workspaceId + socialAccountId` to SNS-AI `accountId` only from explicit operator config. `@sns-growth-bridge/runtime-transport` reads caller-injected SNS-AI JSONL and reuses Phase 6 adapters. Contracts remain schema major `1`. `creatorId` stays unresolved. SNS-AI remains manual-only. My-SNS is not yet a strategy consumer.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3–6 notes are in [`docs/phase3/`](./docs/phase3/), [`docs/phase4/`](./docs/phase4/), [`docs/phase5/`](./docs/phase5/), and [`docs/phase6/`](./docs/phase6/).
+Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3–7A notes are in [`docs/phase3/`](./docs/phase3/), [`docs/phase4/`](./docs/phase4/), [`docs/phase5/`](./docs/phase5/), [`docs/phase6/`](./docs/phase6/), and [`docs/phase7a/`](./docs/phase7a/).
 
 ### Develop
 
@@ -78,6 +78,8 @@ packages/
   strategy/           # pure growth strategy learning
   adapters-my-sns/    # read-only source adapter
   adapters-sns-ai/    # read-only source/consumer adapter
+  identity-links/     # explicit My-SNS ↔ SNS-AI account links
+  runtime-transport/  # read-only SNS-AI JSONL evidence loader
   testing/            # fixtures + cross-repo contract harness
 ```
 
@@ -117,4 +119,4 @@ No production database, UI, social OAuth, direct provider publishing, or automat
 
 ## Next phase
 
-Phase 4 is **pure strategy learning**, after this scorer parity is merged. Do not start Phase 4 in a scoring PR. SNS-AI remains manual-only.
+Phase 7B is **My-SNS shadow strategy**, after this identity-link + read-only transport work is merged. Do not start Phase 7B in a 7A PR. SNS-AI remains manual-only.

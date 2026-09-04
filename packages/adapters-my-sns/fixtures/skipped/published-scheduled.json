@@ -1,0 +1,28 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_scheduled"
+  },
+  "job": {
+    "id": "job_sched",
+    "workspaceId": "ws_fixture_1",
+    "seedId": "seed_1",
+    "draftId": "draft_1",
+    "revisionId": "rev_1",
+    "channel": "x",
+    "status": "scheduled",
+    "publishedAt": "2026-09-10T08:00:00.000Z"
+  },
+  "attempts": [],
+  "revision": {
+    "id": "rev_1",
+    "workspaceId": "ws_fixture_1",
+    "seedId": "seed_1",
+    "socialDraftId": "draft_1",
+    "channel": "x",
+    "body": "Not published yet",
+    "hashtags": [],
+    "source": "ai",
+    "createdAt": "2026-09-02T12:00:00.000Z"
+  }
+}

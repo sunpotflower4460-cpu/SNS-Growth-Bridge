@@ -1,12 +1,9 @@
 # `@sns-growth-bridge/adapters-my-sns`
 
-Read-only adapter from My-SNS shapes into canonical contracts.
+Read-only, pure adapters from sanitized My-SNS-shaped DTOs into Canonical contracts.
 
-**Phase 1:** package skeleton only.
+**Phase 5:** BrandProfile, HumanCorrectionEvent, and confirmed PublishedPostSnapshot.
 
-Not in this package (and not in Phase 1 at all):
+Does **not** connect to Supabase, invent `creatorId`, map `socialAccountId` to SNS-AI `accountId`, emit MetricSnapshot, or generate CreatorAction / Anchor / Orbit.
 
-- `creatorId` mapping (`Workspace.ownerId` / `Seed.createdBy` / acting user are **not** chosen)
-- My-SNS `MetricSnapshot` (no durable metrics/checkpoints)
-- My-SNS ↔ SNS-AI account mapping
-- OAuth, publish, or My-SNS source-repo changes
+See `docs/phase5/MY_SNS_ADAPTER_MAPPING.md`.

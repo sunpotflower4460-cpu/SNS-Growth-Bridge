@@ -52,12 +52,16 @@ export {
   growthStrategySnapshotSchema,
   humanPreferencePatternSchema,
   humanPreferenceSummarySchema,
+  strategyFeatureStatSchema,
+  strategyFeatureStatsSchema,
   strategyPatternSchema,
   type AdviceItem,
   type CandidateAdvice,
   type GrowthStrategySnapshot,
   type HumanPreferencePattern,
   type HumanPreferenceSummary,
+  type StrategyFeatureStat,
+  type StrategyFeatureStats,
   type StrategyPattern,
 } from './strategy.js';
 export {

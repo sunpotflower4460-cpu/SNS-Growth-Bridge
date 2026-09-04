@@ -17,11 +17,11 @@ describe('workspace bootstrap', () => {
     expect(PACKAGE_NAME).toBe('@sns-growth-bridge/testing');
   });
 
-  it('records implemented package phases; adapters and testing remain Phase 1 skeletons', () => {
+  it('records implemented package phases; SNS-AI adapters and testing remain Phase 1 skeletons', () => {
     expect(contractsPhase).toBe(2);
     expect(scoringPhase).toBe(3);
     expect(strategyPhase).toBe(4);
-    expect(adaptersMySnsPhase).toBe(1);
+    expect(adaptersMySnsPhase).toBe(5);
     expect(adaptersSnsAiPhase).toBe(1);
     expect(PACKAGE_PHASE).toBe(1);
   });

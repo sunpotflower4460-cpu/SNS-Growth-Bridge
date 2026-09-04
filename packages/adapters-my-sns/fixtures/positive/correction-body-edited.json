@@ -1,0 +1,26 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_correction_body"
+  },
+  "source": {
+    "id": "rev_1",
+    "workspaceId": "ws_fixture_1",
+    "seedId": "seed_1",
+    "socialDraftId": "draft_1",
+    "aiGenerationId": "gen_1",
+    "channel": "x",
+    "title": "Hello",
+    "body": "Approved body",
+    "hashtags": ["music"],
+    "cta": "Listen",
+    "source": "ai",
+    "createdAt": "2026-09-02T12:00:00.000Z",
+    "aiOriginalSnapshot": {
+      "title": "Hello",
+      "body": "AI original body",
+      "hashtags": ["music"],
+      "cta": "Listen"
+    }
+  }
+}

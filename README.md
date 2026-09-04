@@ -50,9 +50,9 @@ Cursor-specific guardrails are also in:
 
 ## Current execution state
 
-**Phase 4 SNS-AI strategy learning parity.** `@sns-growth-bridge/strategy` ports `buildStrategy()` as `sns-ai-learn-parity-v1`. Scoring remains `sns-ai-parity-v1`. Adapters remain Phase 1 skeletons. Contracts remain schema major `1`.
+**Phase 5 My-SNS read-only adapters.** `@sns-growth-bridge/adapters-my-sns` maps BrandProfile, HumanCorrection, and confirmed PublishedPost. MetricSnapshot remains blocked. SNS-AI adapters remain a Phase 1 skeleton. Contracts remain schema major `1`.
 
-Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3 notes are in [`docs/phase3/`](./docs/phase3/). Phase 4 notes are in [`docs/phase4/`](./docs/phase4/).
+Phase 0 audit is in [`docs/audit/`](./docs/audit/). Phase 3–5 notes are in [`docs/phase3/`](./docs/phase3/), [`docs/phase4/`](./docs/phase4/), and [`docs/phase5/`](./docs/phase5/).
 
 ### Develop
 

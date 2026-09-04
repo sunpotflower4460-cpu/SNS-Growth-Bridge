@@ -1,0 +1,17 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_bp_empty_id"
+  },
+  "source": {
+    "id": "",
+    "workspaceId": "ws_fixture_1",
+    "name": "Aquarium Studio",
+    "voiceTraits": ["calm"],
+    "values": ["honesty"],
+    "preferredTerms": ["listen"],
+    "avoidedTerms": ["buy now"],
+    "language": "ja",
+    "updatedAt": "2026-09-03T10:00:00.000Z"
+  }
+}

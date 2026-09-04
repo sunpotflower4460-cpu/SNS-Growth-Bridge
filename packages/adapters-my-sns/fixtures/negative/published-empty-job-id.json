@@ -1,0 +1,38 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_empty_job_id"
+  },
+  "job": {
+    "id": "",
+    "workspaceId": "ws_fixture_1",
+    "seedId": "seed_1",
+    "draftId": "draft_1",
+    "revisionId": "rev_1",
+    "channel": "x",
+    "status": "published",
+    "publishedAt": "2026-09-03T08:00:00.000Z"
+  },
+  "attempts": [
+    {
+      "id": "att_1",
+      "workspaceId": "ws_fixture_1",
+      "publishJobId": "",
+      "attemptNumber": 1,
+      "status": "success",
+      "externalPostId": "ext_123",
+      "createdAt": "2026-09-03T08:00:00.000Z"
+    }
+  ],
+  "revision": {
+    "id": "rev_1",
+    "workspaceId": "ws_fixture_1",
+    "seedId": "seed_1",
+    "socialDraftId": "draft_1",
+    "channel": "x",
+    "body": "Empty job id must not become my-sns:publish-job:",
+    "hashtags": [],
+    "source": "ai",
+    "createdAt": "2026-09-02T12:00:00.000Z"
+  }
+}

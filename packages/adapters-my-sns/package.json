@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Read-only My-SNS adapter. Phase 1 skeleton only — no mapping, no MetricSnapshot, no creatorId convention.",
+  "description": "Read-only My-SNS → Canonical adapters. No Supabase, MetricSnapshot, or creatorId mapping.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -19,6 +19,9 @@
   ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@sns-growth-bridge/contracts": "*"
   }
 }

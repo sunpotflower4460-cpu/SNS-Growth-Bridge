@@ -1,0 +1,16 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_feedback_unknown_dim"
+  },
+  "source": {
+    "at": "2026-09-03T12:00:00.000Z",
+    "account": "music-tools-x",
+    "action": "prefer",
+    "note": "Unknown dimension must fail closed",
+    "dimension": "trendUsed",
+    "value": "true",
+    "source": "human",
+    "active": true
+  }
+}

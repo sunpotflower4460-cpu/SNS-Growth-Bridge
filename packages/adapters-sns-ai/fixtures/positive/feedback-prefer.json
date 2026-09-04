@@ -1,0 +1,16 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_feedback_prefer"
+  },
+  "source": {
+    "at": "2026-09-03T12:00:00.000Z",
+    "account": "music-tools-x",
+    "action": "prefer",
+    "note": "Keep the late-night tone",
+    "dimension": "topic",
+    "value": "music",
+    "source": "human",
+    "active": true
+  }
+}

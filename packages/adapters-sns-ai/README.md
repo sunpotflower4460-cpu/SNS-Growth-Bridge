@@ -1,13 +1,9 @@
 # `@sns-growth-bridge/adapters-sns-ai`
 
-Read-only adapter between SNS-AI JSONL/runtime shapes and canonical contracts.
+Read-only, pure adapters from sanitized SNS-AI-shaped DTOs into Canonical contracts.
 
-**Phase 1:** package skeleton only.
+**Phase 6:** history → PublishedPostSnapshot, metrics → MetricSnapshot, human feedback → ExplicitFeedbackEvent, and history → Phase 4 `StrategyPostEvidence`.
 
-This package must never:
+Does **not** read JSONL from disk, call providers, invent `creatorId` / `workspaceId`, map My-SNS accounts, copy Artist Support `bridge-contracts.mjs`, or change SNS-AI `manualOnly`.
 
-- enable SNS-AI accounts
-- restore cron / scheduled provider polling
-- publish, reply, DM, or engage
-- copy provider credentials
-- invent a My-SNS `SocialAccount.id` ↔ SNS-AI `accountId` mapping
+See `docs/phase6/SNS_AI_ADAPTER_MAPPING.md`.

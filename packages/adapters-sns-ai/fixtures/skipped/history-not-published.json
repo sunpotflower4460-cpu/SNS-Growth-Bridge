@@ -1,0 +1,14 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_history_failed"
+  },
+  "row": {
+    "at": "2026-09-03T08:00:00.000Z",
+    "account": "music-tools-x",
+    "providerPostId": "ext_x_failed",
+    "platform": "x",
+    "status": "failed",
+    "text": "Not published"
+  }
+}

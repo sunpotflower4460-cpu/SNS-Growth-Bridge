@@ -1,0 +1,13 @@
+{
+  "context": {
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_history_missing_id"
+  },
+  "row": {
+    "at": "2026-09-03T08:00:00.000Z",
+    "account": "music-tools-x",
+    "platform": "x",
+    "status": "published",
+    "text": "Published locally but no providerPostId"
+  }
+}

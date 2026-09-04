@@ -1,9 +1,15 @@
-import type { EnvelopeMeta, GrowthSubjectRef, Platform, StrategyPattern } from '@sns-growth-bridge/contracts';
+import type {
+  EnvelopeMeta,
+  GrowthSubjectRef,
+  Platform,
+  StrategyFeatureStats,
+  StrategyPattern,
+} from '@sns-growth-bridge/contracts';
 import { parseGrowthStrategySnapshot, type GrowthStrategySnapshot } from '@sns-growth-bridge/contracts';
 import { snsString } from '@sns-growth-bridge/scoring';
 
 import { MS_PER_DAY } from './config.js';
-import type { LegacyStrategyPattern, PatternEvidence, StrategyParityResult } from './types.js';
+import type { FeatureStats, LegacyStrategyPattern, PatternEvidence, StrategyParityResult } from './types.js';
 import { STRATEGY_VERSION } from './version.js';
 
 export interface CanonicalStrategyProjectionInput {
@@ -36,6 +42,23 @@ function toCanonicalPattern(pattern: LegacyStrategyPattern, patternEvidence: Pat
   };
 }
 
+function toCanonicalFeatureStats(featureStats: FeatureStats): StrategyFeatureStats {
+  const result: StrategyFeatureStats = {};
+  for (const [dimension, values] of Object.entries(featureStats)) {
+    const mapped: Record<string, { sampleSize: number; averageScore: number; lift: number; confidence: number }> = {};
+    for (const [value, stat] of Object.entries(values)) {
+      mapped[value] = {
+        sampleSize: stat.n,
+        averageScore: stat.averageScore,
+        lift: stat.lift,
+        confidence: stat.confidence,
+      };
+    }
+    result[dimension as keyof StrategyFeatureStats] = mapped;
+  }
+  return result;
+}
+
 /**
  * Bridge-added Canonical fields. Must not feed back into `buildStrategyParity()`.
  */
@@ -64,6 +87,7 @@ export function projectToGrowthStrategySnapshot(input: CanonicalStrategyProjecti
     exploreRate: parity.exploreRate,
     preferred: insufficient ? [] : parity.preferred.map((pattern) => toCanonicalPattern(pattern, patternEvidence)),
     avoid: insufficient ? [] : parity.avoid.map((pattern) => toCanonicalPattern(pattern, patternEvidence)),
+    featureStats: insufficient ? {} : toCanonicalFeatureStats(parity.featureStats),
     inputsDigest,
     status: insufficient ? 'insufficient-evidence' : 'active',
   });

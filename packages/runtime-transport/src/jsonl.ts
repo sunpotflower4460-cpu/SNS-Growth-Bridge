@@ -1,5 +1,6 @@
 import { readFile, stat } from 'node:fs/promises';
 
+import { isPositiveInt } from './limits.js';
 import { TransportReason, type TransportResult } from './types.js';
 
 export async function readJsonlObjects(
@@ -7,6 +8,12 @@ export async function readJsonlObjects(
   limits: { maxBytes: number; maxRows: number },
   label: string,
 ): Promise<TransportResult<Record<string, unknown>[]>> {
+  if (!isPositiveInt(limits.maxBytes)) {
+    return { status: 'blocked', reason: TransportReason.invalidMaxBytesPerFile };
+  }
+  if (!isPositiveInt(limits.maxRows)) {
+    return { status: 'blocked', reason: TransportReason.invalidMaxRowsPerFile };
+  }
   let size: number;
   try {
     size = (await stat(filePath)).size;

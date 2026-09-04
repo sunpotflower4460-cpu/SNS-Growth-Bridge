@@ -7,8 +7,10 @@ import {
 import type { ExplicitFeedbackEvent, MetricSnapshot, PublishedPostSnapshot } from '@sns-growth-bridge/contracts';
 import type { StrategyPostEvidence } from '@sns-growth-bridge/strategy';
 
+import { isIsoDateTimeWithOffset } from './datetime.js';
 import { canonicalDigest } from './digest.js';
 import { readJsonlObjects } from './jsonl.js';
+import { resolvePositiveIntLimit } from './limits.js';
 import {
   TransportReason,
   type SnsAiEvidenceBundle,
@@ -48,9 +50,28 @@ export async function loadSnsAiEvidenceBundle(
   if (!loadedAt) {
     return { status: 'blocked', reason: TransportReason.emptyLoadedAt };
   }
+  if (!isIsoDateTimeWithOffset(loadedAt)) {
+    return { status: 'blocked', reason: TransportReason.invalidLoadedAt };
+  }
+  const maxBytes = resolvePositiveIntLimit(
+    input.maxBytesPerFile,
+    DEFAULT_MAX_BYTES_PER_FILE,
+    TransportReason.invalidMaxBytesPerFile,
+  );
+  if (maxBytes.status !== 'mapped') {
+    return maxBytes;
+  }
+  const maxRows = resolvePositiveIntLimit(
+    input.maxRowsPerFile,
+    DEFAULT_MAX_ROWS_PER_FILE,
+    TransportReason.invalidMaxRowsPerFile,
+  );
+  if (maxRows.status !== 'mapped') {
+    return maxRows;
+  }
   const limits = {
-    maxBytes: input.maxBytesPerFile ?? DEFAULT_MAX_BYTES_PER_FILE,
-    maxRows: input.maxRowsPerFile ?? DEFAULT_MAX_ROWS_PER_FILE,
+    maxBytes: maxBytes.value,
+    maxRows: maxRows.value,
   };
   const context = { producedAt: loadedAt, traceId: input.traceId };
 

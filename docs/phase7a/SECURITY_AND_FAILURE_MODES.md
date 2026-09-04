@@ -16,6 +16,8 @@
 | Private / signed `mediaUrl` | never copied; strategy uses `hasLegacyMediaUrl` only |
 | Absolute local paths | never present on the bundle |
 | Empty source commit SHA / loadedAt | fail closed |
+| Invalid `loadedAt` (not offset ISO datetime) | fail closed; no mapped bundle |
+| `maxBytesPerFile` / `maxRowsPerFile` not a finite positive integer | fail closed before I/O |
 | Automatic account fallback (handle, name, credentialKey) | never |
 
 No network. No My-SNS database. No SNS-AI config writes. `manualOnly` remains true.

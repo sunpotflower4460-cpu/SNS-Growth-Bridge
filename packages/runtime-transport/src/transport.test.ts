@@ -125,6 +125,62 @@ describe('read-only SNS-AI transport', () => {
     expect(result.reason.startsWith(`${TransportReason.rowLimitExceeded}:`)).toBe(true);
   });
 
+  it.each([
+    ['NaN', Number.NaN],
+    ['Infinity', Number.POSITIVE_INFINITY],
+    ['-Infinity', Number.NEGATIVE_INFINITY],
+    ['0', 0],
+    ['-1', -1],
+    ['non-integer', 1.5],
+  ])('fails closed when maxBytesPerFile is %s', async (_label, maxBytesPerFile) => {
+    const result = await loadSnsAiEvidenceBundle(validInput({ maxBytesPerFile }));
+    expect(result).toEqual({ status: 'blocked', reason: TransportReason.invalidMaxBytesPerFile });
+  });
+
+  it.each([
+    ['NaN', Number.NaN],
+    ['Infinity', Number.POSITIVE_INFINITY],
+    ['-Infinity', Number.NEGATIVE_INFINITY],
+    ['0', 0],
+    ['-1', -1],
+    ['non-integer', 1.5],
+  ])('fails closed when maxRowsPerFile is %s', async (_label, maxRowsPerFile) => {
+    const result = await loadSnsAiEvidenceBundle(validInput({ maxRowsPerFile }));
+    expect(result).toEqual({ status: 'blocked', reason: TransportReason.invalidMaxRowsPerFile });
+  });
+
+  it('fails closed when loadedAt is not an offset ISO datetime', async () => {
+    const result = await loadSnsAiEvidenceBundle(validInput({ loadedAt: '2026-09-04T00:00:00' }));
+    expect(result).toEqual({ status: 'blocked', reason: TransportReason.invalidLoadedAt });
+  });
+
+  it('does not map an empty-evidence bundle when loadedAt is invalid', async () => {
+    const emptyPath = join(fixturesRoot, 'empty.jsonl');
+    const result = await loadSnsAiEvidenceBundle(
+      validInput({
+        paths: { historyPath: emptyPath, metricsPath: emptyPath, feedbackPath: emptyPath },
+        loadedAt: 'not-a-date',
+      }),
+    );
+    expect(result).toEqual({ status: 'blocked', reason: TransportReason.invalidLoadedAt });
+  });
+
+  it('maps empty JSONL with a valid loadedAt instead of inventing evidence', async () => {
+    const emptyPath = join(fixturesRoot, 'empty.jsonl');
+    const result = await loadSnsAiEvidenceBundle(
+      validInput({
+        paths: { historyPath: emptyPath, metricsPath: emptyPath, feedbackPath: emptyPath },
+      }),
+    );
+    expect(result.status).toBe('mapped');
+    if (result.status !== 'mapped') {
+      return;
+    }
+    expect(result.value.loadedAt).toBe(CONTEXT.loadedAt);
+    expect(result.value.counts).toEqual({ historyRows: 0, metricRows: 0, feedbackRows: 0 });
+    expect(result.value.publishedPosts).toEqual([]);
+  });
+
   it('ignores unrelated accounts and maps the target account', async () => {
     const result = await loadSnsAiEvidenceBundle(validInput());
     expect(result.status).toBe('mapped');

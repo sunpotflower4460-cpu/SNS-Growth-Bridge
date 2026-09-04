@@ -26,6 +26,10 @@ Forbidden: append, truncate, rename, delete, rewrite, chmod, network, My-SNS Sup
 
 Defaults: 2 MiB per file, 5_000 object rows per file. Excess fails closed.
 
+`maxBytesPerFile` and `maxRowsPerFile` overrides (and the resolved defaults) must be finite positive integers at the transport/I/O boundary. `NaN`, `Infinity`, `-Infinity`, `0`, negatives, and non-integers fail closed **before** `size > maxBytes` / `rows.length > maxRows`, which would otherwise treat those values as “never exceeded”.
+
+`loadedAt` must be a non-empty ISO 8601 datetime with offset (including `Z`). Invalid timestamps fail closed even when JSONL evidence is empty.
+
 ## JSONL rules
 
 - Blank / whitespace-only lines skipped

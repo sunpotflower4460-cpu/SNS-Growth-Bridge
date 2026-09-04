@@ -53,6 +53,7 @@ describe('canonical projection', () => {
     expect(canonical.confidence).toBe(0);
     expect(canonical.preferred).toEqual([]);
     expect(canonical.avoid).toEqual([]);
+    expect(canonical.featureStats).toEqual({});
     expect(canonical.overallScore).toBe(50);
     expect(canonical.strategyVersion).toBe(STRATEGY_VERSION);
     expect(canonical.sourceWindow.strategyWindowDays).toBe(parity.strategyWindowDays);
@@ -60,7 +61,7 @@ describe('canonical projection', () => {
     expect(parseGrowthStrategySnapshot(canonical)).toEqual(canonical);
   });
 
-  it('projects preferred/avoid numbers from parity and adds rationale plus evidencePostIds', () => {
+  it('projects preferred/avoid numbers and full feature stats without losing parity evidence', () => {
     const fixture = loadGolden('tie-stable-sort') as {
       accountId: string;
       now: string;
@@ -103,6 +104,16 @@ describe('canonical projection', () => {
         sampleSize: pattern.n,
       })),
     );
+    for (const [dimension, values] of Object.entries(parity.featureStats)) {
+      for (const [value, stat] of Object.entries(values)) {
+        expect(canonical.featureStats?.[dimension as keyof typeof canonical.featureStats]?.[value]).toEqual({
+          sampleSize: stat.n,
+          averageScore: stat.averageScore,
+          lift: stat.lift,
+          confidence: stat.confidence,
+        });
+      }
+    }
     const firstPreferred = canonical.preferred[0];
     expect(firstPreferred).toBeDefined();
     if (!firstPreferred) {

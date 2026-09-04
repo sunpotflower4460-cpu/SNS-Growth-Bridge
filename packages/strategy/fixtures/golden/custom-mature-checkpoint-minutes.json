@@ -1,0 +1,140 @@
+{
+  "name": "custom-mature-checkpoint-minutes",
+  "accountId": "acct_example_x",
+  "now": "2026-09-01T12:00:00.000Z",
+  "config": {
+    "matureCheckpointMinutes": 4320
+  },
+  "posts": [
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "at_1440",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "day",
+        "hook": "story"
+      },
+      "hasLegacyMediaUrl": false
+    },
+    {
+      "accountId": "acct_example_x",
+      "externalPostId": "at_4320",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
+      "features": {
+        "topic": "three_day",
+        "hook": "story"
+      },
+      "hasLegacyMediaUrl": false
+    }
+  ],
+  "snapshots": [
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_at_1440_1440_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_at_1440_1440",
+      "postId": "post_at_1440",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "at_1440",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 1440,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    },
+    {
+      "meta": {
+        "schemaVersion": 1,
+        "producer": "sns-ai",
+        "producedAt": "2026-09-01T12:00:00.000Z",
+        "traceId": "trace_at_4320_4320_2026-08-20T00:00:00.000Z"
+      },
+      "snapshotId": "snap_at_4320_4320",
+      "postId": "post_at_4320",
+      "subject": {
+        "accountId": "acct_example_x"
+      },
+      "platform": "x",
+      "externalPostId": "at_4320",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "checkpointMinutes": 4320,
+      "metrics": {
+        "impressions": 5000,
+        "likes": 1,
+        "reposts": 80,
+        "quotes": 10,
+        "shares": 10,
+        "bookmarks": 60,
+        "replies": 20,
+        "comments": 5,
+        "profileClicks": 40,
+        "urlClicks": 20
+      }
+    }
+  ],
+  "expected": {
+    "account": "acct_example_x",
+    "generatedAt": "2026-09-01T12:00:00.000Z",
+    "strategyWindowDays": 60,
+    "sampleSize": 1,
+    "overallScore": 50,
+    "confidence": 0.05,
+    "exploreRate": 0.2,
+    "preferred": [],
+    "avoid": [],
+    "featureStats": {
+      "topic": {
+        "three_day": {
+          "n": 1,
+          "averageScore": 50,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      },
+      "angle": {},
+      "hook": {
+        "story": {
+          "n": 1,
+          "averageScore": 50,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      },
+      "emotion": {},
+      "format": {},
+      "cta": {},
+      "mediaDecision": {
+        "none": {
+          "n": 1,
+          "averageScore": 50,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      },
+      "postingHour": {
+        "09:00": {
+          "n": 1,
+          "averageScore": 50,
+          "lift": 0,
+          "confidence": 0.17
+        }
+      }
+    },
+    "guardrail": "Treat these as recent evidence, not identity. Never override profile, safety rules, or explicit human instructions."
+  }
+}

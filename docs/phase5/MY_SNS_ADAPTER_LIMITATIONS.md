@@ -30,7 +30,7 @@ Seed assets and publish-time signed URLs exist in My-SNS runtime, but job/attemp
 
 ## no cross-repo post identity
 
-Canonical `postId` is `my-sns:publish-job:<id>`. It is not merged with SNS-AI `providerPostId`.
+Canonical `postId` is `my-sns:publish-job:<id>`. It is not merged with SNS-AI `providerPostId`. Empty `PublishJob.id` is rejected at the adapter boundary so it cannot become `my-sns:publish-job:`.
 
 ## no runtime Supabase integration
 

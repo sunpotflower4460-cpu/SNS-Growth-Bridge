@@ -24,6 +24,8 @@ export const AdapterReason = {
   joinIntegrity: 'join-integrity',
   crossWorkspace: 'cross-workspace',
   missingPublishedAt: 'missing-published-at',
+  invalidSourceIdentity: 'invalid-source-identity',
+  invalidSourceDatetime: 'invalid-source-datetime',
   canonicalValidationFailed: 'canonical-validation-failed',
   metricSnapshotUnavailable: 'my-sns-has-no-durable-metric-snapshots',
 } as const;

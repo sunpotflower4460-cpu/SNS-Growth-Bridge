@@ -27,7 +27,7 @@ Mapping values: `direct` / `deterministically_derived` / `optional_unavailable` 
 
 | Canonical field | My-SNS source | Mapping | Confidence | Unavailable / reason |
 |---|---|---|---|---|
-| `profileVersion` | `my-sns:<id>:<updatedAt>` | deterministically_derived | high | |
+| `profileVersion` | `my-sns:<id>:<updatedAt>` | deterministically_derived | high | empty `id` / invalid `updatedAt` blocked at adapter boundary |
 | `name` | `name` | direct | high | |
 | `audience` | `audience?` | direct | high | optional |
 | `language` | `language` | direct | high | |
@@ -53,7 +53,7 @@ Then `deriveChangedFields(before, after)` is used on **normalized** snapshots, n
 
 | Canonical field | My-SNS source | Mapping | Confidence | Unavailable / reason |
 |---|---|---|---|---|
-| `eventId` | `my-sns:human-correction:<revision.id>` | deterministically_derived | high | |
+| `eventId` | `my-sns:human-correction:<revision.id>` | deterministically_derived | high | empty `revision.id` also fails Canonical `revisionId` |
 | `platform` | `revision.channel` | direct | high | `line` skipped; unknown fail closed |
 | `seedId` | `revision.seedId` | direct | high | |
 | `draftId` | `revision.socialDraftId` | direct | high | |
@@ -82,7 +82,7 @@ Emit only when `job.status === 'published'` **and** a same-workspace same-job `s
 
 | Canonical field | My-SNS source | Mapping | Confidence | Unavailable / reason |
 |---|---|---|---|---|
-| `postId` | `my-sns:publish-job:<job.id>` | deterministically_derived | high | not reconciled with SNS-AI |
+| `postId` | `my-sns:publish-job:<job.id>` | deterministically_derived | high | empty `job.id` blocked at adapter boundary; not reconciled with SNS-AI |
 | `platform` | `job.channel` | direct | high | Canonical platforms only |
 | `revisionId` | `job.revisionId` | direct | high | must equal `revision.id` |
 | `seedId` | `job.seedId` | direct | high | must equal `revision.seedId` |
@@ -114,6 +114,29 @@ revision.channel === job.channel
 ```
 
 Public API: `adaptMySnsPublishedPost()`.
+
+## Source identity / provenance fail-closed
+
+Prefixing a source id into a Canonical string (`my-sns:<id>:…`, `my-sns:publish-job:<id>`) would make an empty source value look like a non-empty Canonical id. Adapter boundary rejects those sources **before** prefixing:
+
+| Source field | Adapter check | Why Canonical `nonEmptyString` is insufficient |
+|---|---|---|
+| `BrandProfile.id` | non-empty after trim | becomes `profileVersion` `my-sns:<id>:<updatedAt>` |
+| `BrandProfile.updatedAt` | ISO 8601 datetime with offset | embedded in `profileVersion`; Canonical `profileVersion` is not a datetime |
+| `PublishJob.id` | non-empty after trim | becomes `postId` `my-sns:publish-job:<id>` |
+
+Other identity / provenance fields are passed **directly** into Canonical validators (no prefix laundering). Empty / invalid values fail closed there:
+
+| Source field | Canonical field | Validator |
+|---|---|---|
+| `workspaceId` | `subject.workspaceId` | `nonEmptyString` |
+| `DraftRevision.id` | `revisionId` | `nonEmptyString` (also prefixed into `eventId`; parse still fails on `revisionId`) |
+| `DraftRevision.socialDraftId` | `draftId` | `nonEmptyString` |
+| `DraftRevision.seedId` | `seedId` | optional `nonEmptyString` |
+| `DraftRevision.createdAt` | `occurredAt` | `isoDateTime` |
+| `PublishJob.revisionId` / `seedId` | `revisionId` / `seedId` | optional `nonEmptyString` |
+| `PublishJob.publishedAt` | `publishedAt` | missing → adapter blocked; invalid → `isoDateTime` |
+| `MySnsAdapterContext.producedAt` / `traceId` | `EnvelopeMeta` | `isoDateTime` / `nonEmptyString` |
 
 ## Not implemented
 

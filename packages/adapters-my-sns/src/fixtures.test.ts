@@ -123,6 +123,32 @@ describe('sanitized adapter fixtures', () => {
       reason: AdapterReason.missingPublishedAt,
     });
   });
+
+  it('blocks empty BrandProfile.id, invalid updatedAt, and empty PublishJob.id fixtures', () => {
+    const emptyProfileId = loadJson('negative/brand-profile-empty-id.json') as {
+      context: MySnsAdapterContext;
+      source: MySnsBrandProfileSource;
+    };
+    const invalidUpdatedAt = loadJson('negative/brand-profile-invalid-updated-at.json') as {
+      context: MySnsAdapterContext;
+      source: MySnsBrandProfileSource;
+    };
+    const emptyJobId = loadJson('negative/published-empty-job-id.json') as {
+      context: MySnsAdapterContext;
+    } & MySnsPublishedPostInput;
+    expect(adaptMySnsBrandProfile(emptyProfileId.source, emptyProfileId.context)).toEqual({
+      status: 'blocked',
+      reason: `${AdapterReason.invalidSourceIdentity}: BrandProfile.id`,
+    });
+    expect(adaptMySnsBrandProfile(invalidUpdatedAt.source, invalidUpdatedAt.context)).toEqual({
+      status: 'blocked',
+      reason: `${AdapterReason.invalidSourceDatetime}: BrandProfile.updatedAt`,
+    });
+    expect(adaptMySnsPublishedPost(emptyJobId, emptyJobId.context)).toEqual({
+      status: 'blocked',
+      reason: `${AdapterReason.invalidSourceIdentity}: PublishJob.id`,
+    });
+  });
 });
 
 describe('MetricSnapshot', () => {

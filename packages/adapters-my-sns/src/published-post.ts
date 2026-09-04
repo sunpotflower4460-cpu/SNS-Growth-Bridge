@@ -7,6 +7,7 @@ import {
 import { buildMySnsEnvelope } from './envelope.js';
 import { isCanonicalPlatform } from './normalization.js';
 import { AdapterReason, type AdapterResult } from './result.js';
+import { blockedInvalidSourceIdentity, isNonEmptySourceId } from './source-identity.js';
 import type {
   MySnsAdapterContext,
   MySnsPublishAttemptSource,
@@ -53,6 +54,9 @@ export function adaptMySnsPublishedPost(
   }
   if (job.status !== 'published') {
     return { status: 'not-applicable', reason: AdapterReason.jobNotPublished };
+  }
+  if (!isNonEmptySourceId(job.id)) {
+    return blockedInvalidSourceIdentity('PublishJob.id');
   }
   if (!revision) {
     return { status: 'blocked', reason: AdapterReason.missingRevision };

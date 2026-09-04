@@ -103,6 +103,7 @@ Publish worker signs Seed assets at publish time (`selectPublishMedia` + signed 
 - `subject.workspaceId` only.
 - `SocialAccount.id` / `externalAccountId` / `publishJob.socialAccountId` must not become Canonical or SNS-AI `accountId`.
 - Cross-repo post identity is unresolved. Canonical `postId` is producer-local: `my-sns:publish-job:<job.id>`.
+- Adapter-boundary: empty `BrandProfile.id` / invalid `updatedAt` / empty `PublishJob.id` are blocked so prefixing cannot launder them past Canonical `nonEmptyString`.
 
 ## Unavailable fields (do not invent)
 

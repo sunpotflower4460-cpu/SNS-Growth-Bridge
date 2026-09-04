@@ -6,4 +6,6 @@ Read-only, pure adapters from sanitized My-SNS-shaped DTOs into Canonical contra
 
 Does **not** connect to Supabase, invent `creatorId`, map `socialAccountId` to SNS-AI `accountId`, emit MetricSnapshot, or generate CreatorAction / Anchor / Orbit.
 
+Source ids that would be prefixed into Canonical identity strings (`BrandProfile.id`, `BrandProfile.updatedAt`, `PublishJob.id`) are fail-closed at the adapter boundary.
+
 See `docs/phase5/MY_SNS_ADAPTER_MAPPING.md`.

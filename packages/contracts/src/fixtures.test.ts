@@ -4,6 +4,7 @@ import {
   CURRENT_SCHEMA_VERSION,
   PACKAGE_PHASE,
   parseCreatorActionRecommendation,
+  parseCrossProductAccountLink,
   parseEnvelopeMeta,
   parseGrowthStrategySnapshot,
   parseGrowthSubjectRef,
@@ -39,6 +40,14 @@ describe('positive contract fixtures', () => {
     expect(parseGrowthSubjectRef(loadJsonFixture('positive', 'growth-subject-account-only.json'))).toEqual({
       accountId: 'acct_example_x',
     });
+  });
+
+  it('accepts CrossProductAccountLink without inventing creatorId', () => {
+    const parsed = parseCrossProductAccountLink(loadJsonFixture('positive', 'cross-product-account-link.json'));
+    expect(parsed.confirmation).toBe('explicit-operator');
+    expect(parsed.mySns.workspaceId).toBe('ws_fixture');
+    expect(parsed.snsAi.accountId).toBe('artist-x-fixture');
+    expect(JSON.stringify(parsed)).not.toContain('creatorId');
   });
 
   it('accepts a real HumanCorrectionEvent (AI draft edited on title/body/CTA/hashtag set)', () => {
@@ -304,6 +313,12 @@ describe('negative contract fixtures', () => {
   it('rejects overallScore outside 0..100', () => {
     expectContractError(() =>
       parseGrowthStrategySnapshot(loadJsonFixture('negative', 'growth-strategy-score-out-of-range.json')),
+    );
+  });
+
+  it('rejects CrossProductAccountLink with empty workspaceId', () => {
+    expectContractError(() =>
+      parseCrossProductAccountLink(loadJsonFixture('negative', 'cross-product-account-link-empty-workspace.json')),
     );
   });
 });

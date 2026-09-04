@@ -15,5 +15,7 @@ export const WORKSPACE_PACKAGE_NAMES = [
   '@sns-growth-bridge/strategy',
   '@sns-growth-bridge/adapters-my-sns',
   '@sns-growth-bridge/adapters-sns-ai',
+  '@sns-growth-bridge/identity-links',
+  '@sns-growth-bridge/runtime-transport',
   '@sns-growth-bridge/testing',
 ] as const;

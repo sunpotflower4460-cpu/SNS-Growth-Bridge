@@ -170,6 +170,12 @@ SNS-Growth-Bridge/
     adapters-sns-ai/
       src/
       test/
+    identity-links/
+      src/
+      test/
+    runtime-transport/
+      src/
+      test/
     scoring/
       src/
       test/

@@ -57,6 +57,38 @@ Provider-native IDs belong in explicit `external*` fields. Never use email, acce
 
 Growth-domain payloads use `subject: GrowthSubjectRef` rather than leaking source-repo identity columns.
 
+### CrossProductAccountLink
+
+Phase 7A additive standalone contract. Schema major stays `1`. `GrowthSubjectRef` requiredness is unchanged.
+
+This is **not** a guess. It is an operator-confirmed mapping between one My-SNS social account and one SNS-AI account.
+
+```ts
+interface CrossProductAccountLink {
+  meta: EnvelopeMeta
+  linkId: string // deterministic: bridge-account-link:<sha256(workspaceId, socialAccountId, snsAiAccountId, platform)>
+  platform: Platform
+  mySns: {
+    workspaceId: string
+    socialAccountId: string
+  }
+  snsAi: {
+    accountId: string
+  }
+  status: 'active' | 'disabled'
+  confirmation: 'explicit-operator'
+  confirmedAt: string
+}
+```
+
+Forbidden:
+
+- inferring the link from handle, `externalAccountId`, display name, credentials, or post ids
+- attaching `creatorId`
+- workspace-only linking
+- using a disabled link for resolution or linked strategy projection
+
+
 ---
 
 ## 2. Schema version

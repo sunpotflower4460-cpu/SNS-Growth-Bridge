@@ -171,6 +171,8 @@ packages/
   strategy/
   adapters-my-sns/
   adapters-sns-ai/
+  identity-links/
+  runtime-transport/
   testing/
 ```
 

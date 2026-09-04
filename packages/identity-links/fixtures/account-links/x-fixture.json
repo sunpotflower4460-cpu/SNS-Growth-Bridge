@@ -1,0 +1,9 @@
+[
+  {
+    "workspaceId": "ws_fixture",
+    "socialAccountId": "my_x_fixture",
+    "snsAiAccountId": "artist-x-fixture",
+    "platform": "x",
+    "enabled": true
+  }
+]

@@ -71,6 +71,8 @@ packages/
   strategy/
   adapters-my-sns/
   adapters-sns-ai/
+  identity-links/
+  runtime-transport/
   testing/
 ```
 
@@ -278,7 +280,39 @@ SNS-AI can consume a bridge fixture strategy in a dry unit test while its runtim
 
 ---
 
-## Phase 7 — Shadow strategy in My-SNS
+## Phase 7A — Cross-product identity + read-only transport
+
+Goal: bind My-SNS and SNS-AI accounts only through an explicit operator link, then read SNS-AI JSONL evidence through caller-injected local paths.
+
+Not in this phase: My-SNS shadow strategy consumption, DB writes, UI, draft generation.
+
+Identity unit:
+
+- My-SNS: `workspaceId + socialAccountId + platform`
+- SNS-AI: `accountId + platform`
+
+Never infer a link from handle, `externalAccountId`, display name, credentials, or post ids. `creatorId` stays unresolved. Linked subject is `{ workspaceId, accountId }`.
+
+New packages:
+
+- `packages/identity-links` — operator config → `CrossProductAccountLink`, one-to-one validation, active resolution
+- `packages/runtime-transport` — read-only JSONL load, Phase 6 adapter reuse, offline `buildLinkedShadowStrategy`
+
+Hard safety invariant:
+
+- no network
+- no My-SNS database
+- no SNS-AI config/runtime writes
+- no real account mapping committed
+- disabled links parse but cannot resolve into a linked strategy
+
+Exit criterion:
+
+An offline fixture proves explicit link + SNS-AI JSONL → Canonical evidence → Phase 3 scorer → Phase 4 strategy → `GrowthStrategySnapshot.subject = { workspaceId, accountId }`.
+
+---
+
+## Phase 7B — Shadow strategy in My-SNS
 
 Goal: produce strategy using real My-SNS data, but do not influence generation yet.
 

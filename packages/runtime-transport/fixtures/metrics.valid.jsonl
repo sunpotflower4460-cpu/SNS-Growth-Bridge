@@ -1,0 +1,3 @@
+{"collectedAt":"2026-09-03T08:00:00.000Z","account":"artist-x-fixture","providerPostId":"ext_x_target","platform":"x","checkpointMinutes":1440,"metrics":{"impressions":2000,"likes":10,"reposts":20,"quotes":4,"bookmarks":30,"replies":8,"profileClicks":40,"urlClicks":16}}
+{"collectedAt":"2026-09-03T08:00:00.000Z","account":"artist-x-fixture","providerPostId":"ext_x_peer","platform":"x","checkpointMinutes":1440,"metrics":{"impressions":1000,"likes":5,"reposts":10,"quotes":2,"bookmarks":12,"replies":4,"profileClicks":20,"urlClicks":8}}
+{"collectedAt":"2026-09-03T08:00:00.000Z","account":"other-account","providerPostId":"ext_other","platform":"x","checkpointMinutes":1440,"metrics":{"impressions":99999,"likes":1}}

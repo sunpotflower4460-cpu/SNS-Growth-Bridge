@@ -1,9 +1,9 @@
 {
-  "name": "@sns-growth-bridge/testing",
+  "name": "@sns-growth-bridge/runtime-transport",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Fixtures and workspace smoke tests. Phase 1 verifies package resolve/build only.",
+  "description": "Read-only SNS-AI JSONL evidence transport. No network or writes.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -13,20 +13,15 @@
   },
   "main": "./dist/index.js",
   "types": "./src/index.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json"
   },
   "dependencies": {
-    "@sns-growth-bridge/adapters-my-sns": "*",
     "@sns-growth-bridge/adapters-sns-ai": "*",
     "@sns-growth-bridge/contracts": "*",
     "@sns-growth-bridge/identity-links": "*",
-    "@sns-growth-bridge/runtime-transport": "*",
     "@sns-growth-bridge/scoring": "*",
     "@sns-growth-bridge/strategy": "*"
   }

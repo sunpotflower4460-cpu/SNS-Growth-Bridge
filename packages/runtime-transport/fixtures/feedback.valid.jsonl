@@ -1,0 +1,2 @@
+{"at":"2026-09-03T12:00:00.000Z","account":"artist-x-fixture","action":"prefer","note":"Keep the late-night tone","dimension":"topic","value":"music","source":"human","active":true}
+{"at":"2026-09-03T13:00:00.000Z","account":"other-account","action":"avoid","note":"Must be ignored","source":"human","active":true}

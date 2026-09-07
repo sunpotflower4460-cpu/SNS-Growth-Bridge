@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "producer": "sns-growth-bridge",
+    "producedAt": "2026-09-04T00:00:00.000Z",
+    "traceId": "trace_account_link_empty_ws"
+  },
+  "linkId": "bridge-account-link:fixture_empty",
+  "platform": "x",
+  "mySns": {
+    "workspaceId": "",
+    "socialAccountId": "my_x_fixture"
+  },
+  "snsAi": {
+    "accountId": "artist-x-fixture"
+  },
+  "status": "active",
+  "confirmation": "explicit-operator",
+  "confirmedAt": "2026-09-04T00:00:00.000Z"
+}

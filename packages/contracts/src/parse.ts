@@ -1,5 +1,7 @@
 import type { z } from 'zod';
 
+import { crossProductAccountLinkSchema } from './account-link.js';
+import type { CrossProductAccountLink } from './account-link.js';
 import { orbitPlanSchema, humanAnchorEventSchema, scheduleAdjustmentRecommendationSchema } from './anchor-orbit.js';
 import type { HumanAnchorEvent, OrbitPlan, ScheduleAdjustmentRecommendation } from './anchor-orbit.js';
 import { candidateAdviceSchema, growthStrategySnapshotSchema, humanPreferenceSummarySchema } from './strategy.js';
@@ -38,6 +40,10 @@ export function parseEnvelopeMeta(input: unknown): EnvelopeMeta {
 
 export function parseGrowthSubjectRef(input: unknown): GrowthSubjectRef {
   return parseContract('GrowthSubjectRef', growthSubjectRefSchema, input);
+}
+
+export function parseCrossProductAccountLink(input: unknown): CrossProductAccountLink {
+  return parseContract('CrossProductAccountLink', crossProductAccountLinkSchema, input);
 }
 
 export function parseCreatorProfileSnapshot(input: unknown): CreatorProfileSnapshot {

@@ -1,0 +1,11 @@
+{
+  "links": [
+    {
+      "workspaceId": "ws_example",
+      "socialAccountId": "social_example_x",
+      "snsAiAccountId": "example-x",
+      "platform": "x",
+      "enabled": true
+    }
+  ]
+}

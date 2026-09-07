@@ -6,3 +6,5 @@ coverage/
 .env
 .env.*
 !.env.example
+config/account-links.local.json
+

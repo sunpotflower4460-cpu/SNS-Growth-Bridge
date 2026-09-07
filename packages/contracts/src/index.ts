@@ -12,6 +12,10 @@ export { ContractValidationError, isContractValidationError } from './errors.js'
 export { envelopeMetaSchema, producerSchema, type EnvelopeMeta, type Producer } from './envelope.js';
 export { growthSubjectRefSchema, type GrowthSubjectRef } from './identity.js';
 export {
+  crossProductAccountLinkSchema,
+  type CrossProductAccountLink,
+} from './account-link.js';
+export {
   platformSchema,
   growthFeatureDimensionSchema,
   type Platform,
@@ -109,6 +113,7 @@ export {
   parseContract,
   parseCreatorActionRecommendation,
   parseCreatorProfileSnapshot,
+  parseCrossProductAccountLink,
   parseEnvelopeMeta,
   parseExperimentDefinition,
   parseExperimentResult,
